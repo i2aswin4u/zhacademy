@@ -1,0 +1,445 @@
+@charset "utf-8";
+/* CSS Document */
+/* apply a natural box layout model to all elements  */
+* {font-family: 'Open Sans', sans-serif; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; outline-style:none; outline-width:inherit; outline-color:none;}
+/* -- Common element styles -- */
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}
+body{line-height:1}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
+nav ul{list-style:none}
+blockquote,q{quotes:none}
+blockquote:before,blockquote:after,q:before,q:after{content:none}
+a{margin:0;padding:0;font-size:100%;vertical-align:baseline;background:transparent}
+ins{background-color:#ff9;color:#000;text-decoration:none; padding-left:5px ; padding-right:5px;}
+mark{background-color:#ff9;color:#000;font-style:italic;font-weight:bold}
+del{text-decoration:line-through}
+abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help}
+table{border-collapse:collapse;border-spacing:0}
+hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0}
+input,select{vertical-align:middle}
+
+/* -- Place holder -- */
+::-webkit-input-placeholder { font-style:inherit; color:red !important;}
+:-moz-placeholder { /* Firefox 18- */ 
+	font-style:italic; color:red !important;}
+::-moz-placeholder {  /* Firefox 19+ */ 
+   font-style:italic; color:#999 !important; }
+:-ms-input-placeholder {  font-style:italic; color:red!important ;}
+
+/* -- Selection -- */
+::selection{color:#fff;background-color:rgba(0, 125, 255, 0.54);text-shadow:none}::-moz-selection{color:#fff;background-color:rgba(0, 125, 255, 0.54); }
+
+/* --- To wrap long URLs, strings of text, and other content --*/
+pre {
+    white-space: pre;           /* CSS 2.0 */
+    white-space: pre-wrap;      /* CSS 2.1 */
+    white-space: pre-line;      /* CSS 3.0 */
+    white-space: -pre-wrap;     /* Opera 4-6 */
+    white-space: -o-pre-wrap;   /* Opera 7 */
+    white-space: -moz-pre-wrap; /* Mozilla */
+    white-space: -hp-pre-wrap;  /* HP Printers */
+    word-wrap: break-word;      /* IE 5+ */
+}
+
+img {max-width: 100%; height: auto; -webkit-transform: scale(1, 1) rotate(0deg);}
+
+a { color:#06C; text-decoration:none; outline: 0; transition: all 0.2s linear;}
+a .fa{transition: all 0.2s linear;}
+a:hover {color:#069; text-decoration:none}
+
+h1 {font-size: 40px; font-family: 'Open Sans', sans-serif; color: #2271c3; font-weight: 300; margin: 0px 0 20px 0;}
+h2 {font-size: 35px; font-family: 'Open Sans', sans-serif; color: #2271c3; font-weight: 300; margin: 0px 0 20px 0;}
+h2.bold{font-size: 35px; font-family: 'Open Sans', sans-serif; color: #2271c3; font-weight: 700; margin: 0px 0 20px 0;}
+h3 {font-size: 22px; font-family: 'Open Sans', sans-serif; color: #2271c3; font-weight: 600; margin: 0px 0 20px 0;} 
+h4 {font-size: 1.286em; font-family: 'Open Sans', sans-serif; } 
+h5 {font-size: 1.143em; font-family: 'Open Sans', sans-serif; } 
+h6 {font-size: 1em; font-family: 'Open Sans', sans-serif; } 
+p { font:normal 14px/20px 'Open Sans', sans-serif; margin-bottom: 20px;}
+* p:last-child {margin-bottom: 0;}
+
+ul { list-style:none;}
+ul li, ol li { margin-bottom:3px;} 
+/* -- End common element styles -- */
+
+input:focus, select:focus, textarea:focus {outline: inherit;}
+
+/* -- Clearfix copied from Bootstrap -- */
+.clearfix {  *zoom: 1;}
+.clearfix:before, .clearfix:after { display: table;  content: "";}
+.clearfix:after {  clear: both;}
+
+
+/* -- Various font styles -- */ 
+.large { font-size:20px; line-height:24px; font-family: 'Open Sans', sans-serif; color: #414042; font-weight: normal; margin:0 0 20px 0;}
+.small { font-size:11px;}
+.light { font-weight:normal;}
+.x-large { font-size:24px;}
+.italic{font-style:italic; }
+
+/* ----  Responsive Google map   ---- */
+.flexible-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden;
+}
+
+.flexible-container iframe,   
+.flexible-container object,  
+.flexible-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* -- ============== Custom Styles  =============== -- */
+.lt { text-decoration:line-through;}
+/* -- Table Layout styles -- */
+.table { display:table; width:100%;}
+.table-row { display:table-row; width:100%;}
+.table-cell { display:table-cell; vertical-align:top;}
+
+/* -- Styles for block and inline block -- */
+.block { display:block;}
+.in-block { display:inline-block} 
+
+/* -- Relative position -- */
+.pos-rel { position:relative;}
+
+/* -- Text Align -- */
+.text-right {text-align: right;}
+.text-center {text-align: center;}
+.text-left {text-align: left;}
+
+/*--- Align Vertical -- */
+.valign-top { vertical-align:top; display:inline-block}
+.valign-middle { vertical-align:middle; display:inline-block}
+.valign-bottom { vertical-align:bottom; display:inline-block}
+
+/* -- Disabled font size -- */
+.disabled {
+	/* Required for IE 5, 6, 7 */
+	/* ...or something to trigger hasLayout, like zoom: 1; */
+	width: 100%; 
+		
+	/* Theoretically for IE 8 & 9 (more valid) */	
+	/* ...but not required as filter works too */
+	/* should come BEFORE filter */
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+	
+	/* This works in IE 8 & 9 too */
+	/* ... but also 5, 6, 7 */
+	filter: alpha(opacity=50);
+	
+	/* Older than Firefox 0.9 */
+	-moz-opacity:0.5;
+	
+	/* Safari 1.x (pre WebKit!) */
+	-khtml-opacity: 0.5;
+    
+	/* Modern!
+	/* Firefox 0.9+, Safari 2?, Chrome any?
+	/* Opera 9+, IE 9+ */
+	opacity: 0.5;
+}
+
+/* -- Webkit Custom scroll abr -- */
+::-webkit-scrollbar {
+    width: 10px;
+}
+ 
+::-webkit-scrollbar-track {
+    background:#dcdcdc;
+    border-radius: 10px;
+}
+ 
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+	
+    background: rgb(0, 0, 0); 
+	border:1px solid #fff;
+	
+}
+
+
+/* ---- Full width floated element -- */
+.full-width { width:100%; float:left;}
+
+/* -- =============== Custom margins Margins =================== -- */
+
+/* -- Align Left or Right based on Margin -- */
+.margin-left { margin-left:auto; display:table !important;}
+.margin-right { margin-right:auto; display:table !important;}
+
+/* -- Margins -- */
+.margin-0 { margin:0;}
+.margin-t0 { margin-top:0 !important;}
+.margin-b0 { margin-bottom:0 !important;}
+.margin-l0 { margin-left:0 !important;}
+.margin-r0 { margin-right:0 !important;} 
+
+.margin-5 { margin:5px;}
+.margin-10 { margin:10px;}
+.margin-15 { margin:15px;}
+.margin-20 { margin:20px;}
+
+/* --- Margin left --- */
+.margin-l5 { margin-left:5px !important;} 
+.margin-l10 { margin-left:10px !important;} 
+.margin-l20 { margin-left:20px !important;} 
+.margin-l30 { margin-left:30px !important;} 
+.margin-l40 { margin-left:40px !important;} 
+.margin-l50 { margin-left:50px !important;} 
+.margin-l60 { margin-left:60px !important;} 
+.margin-l70 { margin-left:70px !important;} 
+.margin-l80 { margin-left:80px !important;} 
+.margin-l90 { margin-left:90px !important;} 
+.margin-l100 { margin-left:100px !important;} 
+
+/* --- Margin right --- */
+.margin-r5 { margin-right:5px !important;} 
+.margin-r10 { margin-right:10px !important;} 
+.margin-r20 { margin-right:20px !important;} 
+.margin-r30 { margin-right:30px !important;} 
+.margin-r40 { margin-right:40px !important;} 
+.margin-r50 { margin-right:50px !important;} 
+.margin-r60 { margin-right:60px !important;} 
+.margin-r70 { margin-right:70px !important;} 
+.margin-r80 { margin-right:80px !important;} 
+.margin-r90 { margin-right:90px !important;} 
+.margin-r100 { margin-right:100px !important;} 
+
+/* -- Margin Left and right -- */
+.margin-lr5 { margin-left :5px; margin-right:5px;}
+.margin-lr10 { margin-left:10px; margin-right:10px;}
+.margin-lr15 { margin-left:15px; margin-right:15px;}
+.margin-lr20 { margin-left:20px; margin-right:20px;}
+.margin-lr25 { margin-left:25px; margin-right:25px;}
+.margin-lr30 { margin-left:30px; margin-right:30px;}
+.margin-lr30 { margin-left:30px; margin-right:30px;}
+
+/* -- MArgin top and bottom -- */
+.margin-tb5 { margin-top:5px; margin-bottom:5px;}
+.margin-tb10 { margin-top:10px; margin-bottom:10px;}
+.margin-tb15 { margin-top:15px; margin-bottom:15px;}
+.margin-tb20 { margin-top:20px; margin-bottom:20px;}
+.margin-tb25 { margin-top:25px; margin-bottom:25px;}
+.margin-tb30 { margin-top:30px; margin-bottom:30px;}
+.margin-tb40 { margin-top:40px; margin-bottom:40px;}
+.margin-tb50 { margin-top:50px; margin-bottom:50px;}
+
+/* -- Margin Top -- */
+.margin-t5 { margin-top:5px;}
+.margin-t10 { margin-top:10px;}
+.margin-t15 { margin-top:15px;}
+.margin-t20 { margin-top:20px;}
+.margin-t25 { margin-top:25px;}
+.margin-t30 { margin-top:30px;}
+.margin-t40 { margin-top:40px;}
+.margin-t50 { margin-top:50px;}
+.margin-t60 { margin-top:60px;}
+.margin-t70 { margin-top:70px;}
+.margin-t80 { margin-top:80px;}
+.margin-t90 { margin-top:90px;}
+.margin-t100 { margin-top:100px;}
+.margin-t120 { margin-top:120px;}
+.margin-t180 { margin-top:180px;}
+
+/* -- Margin Bottom -- */
+.margin-b5 { margin-bottom:5px;}
+.margin-b10 { margin-bottom:10px;}
+.margin-b15 { margin-bottom:15px;}
+.margin-b20 { margin-bottom:20px;}
+.margin-b25 { margin-bottom:25px;}
+.margin-b30 { margin-bottom:30px;}
+.margin-b40 { margin-bottom:40px;}
+.margin-b50 { margin-bottom:50px;}
+.margin-b60 { margin-bottom:60px;}
+.margin-b70 { margin-bottom:70px;}
+.margin-b80 { margin-bottom:80px;}
+.margin-b90 { margin-bottom:90px;}
+.margin-b100 { margin-bottom:100px;}
+
+
+/* --  ======== Padding ======= -- */
+.padding-0 { padding:0 !important;}
+.padding-lr0 { padding-left:0 !important; padding-right:0 !important;}
+.padding-tb0 {padding-top:0; padding-bottom:0;}
+.padding-b0 { padding-bottom:0 !important;} 
+.padding-t0 { padding-top:0 !important;} 
+.padding-l0 { padding-left:0 !important;} 
+.padding-b0 { padding-right:0 !important;} 
+
+.padding-5 { padding:5px;}
+.padding-10 { padding:10px;}
+.padding-15 { padding:15px;}
+.padding-20 { padding:20px;}
+.padding-25 { padding:25px;}
+.padding-30 { padding:30px;}
+.padding-40 { padding:40px;}
+.padding-50 { padding:50px;}
+
+.padding-lr5 { padding-left:5px; padding-right:5px;}
+.padding-lr10 { padding-left:10px; padding-right:10px;}
+.padding-lr15 { padding-left:15px; padding-right:15px;}
+.padding-lr20 { padding-left:20px; padding-right:20px;}
+.padding-lr50 { padding-left:50px; padding-right:50px;}
+.padding-lr60 { padding-left:60px; padding-right:60px;}
+.padding-lr80 { padding-left:80px; padding-right:80px;}
+
+.padding-tb5 { padding-top:5px !important; padding-bottom:5px !important;}
+.padding-tb10 { padding-top:10px !important; padding-bottom:10px !important;}
+.padding-tb15 { padding-top:15px !important; padding-bottom:15px !important;}
+.padding-tb20 { padding-top:20px !important; padding-bottom:20px !important;}
+.padding-tb25 { padding-top:25px !important; padding-bottom:25px !important;}
+.padding-tb30 { padding-top:30px !important; padding-bottom:30px !important;}
+.padding-tb40 { padding-top:40px !important; padding-bottom:40px !important;}
+.padding-tb50 { padding-top:50px !important; padding-bottom:50px !important;}
+
+.padding-t10 {padding-top: 10px}
+.padding-t20 {padding-top: 20px}
+.padding-t30 {padding-top: 30px}
+.padding-t40 {padding-top: 40px}
+.padding-t50 {padding-top: 50px}
+.padding-t60 {padding-top: 60px}
+.padding-t70 {padding-top: 70px}
+.padding-t80 {padding-top: 80px}
+
+.padding-b10 {padding-bottom: 10px;}
+.padding-b20 {padding-bottom: 20px;}
+.padding-b30 {padding-bottom: 30px;}
+.padding-b40 {padding-bottom: 40px;}
+.padding-b50 {padding-bottom: 50px;}
+.padding-b60 {padding-bottom: 60px;}
+.padding-b70 {padding-bottom: 70px;}
+.padding-b80 {padding-bottom: 80px;}
+
+/*.btn { cursor: url('../img/pointer.png') 10 5, move;}*/
+
+
+
+/*   ========== Custom Select, Custom Check box and Custom Radio Button =============    */
+/*Custom Checkbox and Radio button */
+.custom-checkbox input[type="checkbox"] + label::before,
+.custom-radio input[type="radio"] + label::before{ vertical-align: middle;}
+/* hide the checkboxes and radios */
+.custom-checkbox input[type="checkbox"],
+.custom-radio input[type="radio"]{    position: absolute;    opacity: 0; width:23px; height:23px;}
+
+/* we use generated content to create a placeholder for the checkbox and the radio */
+.custom-checkbox input[type="checkbox"] + label::before,
+.custom-radio input[type="radio"] + label::before
+{   content: "";
+    display: inline-block;
+    width: 23px;
+    height: 23px;
+    line-height: 23px;
+    margin: 0 8px 0 0;
+    background: url("../img/sprite-radio-checkbox.png") no-repeat -2px -1px;
+    vertical-align: middle;
+}
+/* disabled checkbox or radio */
+.custom-form input[type="checkbox"]:disabled + label,
+.custom-form input[type="radio"]:disabled + label
+{    opacity: .5;
+    cursor: default; /* or cursor: no-drop */
+}
+/* hover checkbox (unselected state only) */
+.custom-checkbox input[type="checkbox"]:not(:checked):hover + label::before
+{    background-position: -2px -24px;
+}
+/* selected checkbox */
+.custom-checkbox input[type="checkbox"]:checked + label::before
+{
+    background-position: -2px -47px;
+}
+/* normal state radio */
+.custom-radio input[type="radio"] + label::before
+{
+    background-position: -27px -1px;
+}
+/* radio hover (unselected state only) */
+.custom-radio input[type="radio"]:hover + label::before
+{
+    background-position: -27px -24px;
+}
+/* selected radio */
+.custom-radio input[type="radio"]:checked + label::before
+{
+    background-position: -27px -47px;
+}
+/* focused checkbox or radio */
+.custom-form input[type="checkbox"]:focus + label,
+.custom-form input[type="radio"]:focus + label
+{
+    outline: dotted 1px; /* by not adding color to the value we force the use of system's default focus color "invert" */
+}
+/* older versions of internet explorer do not support either generated content, so we display the system checkboxes and radio buttons */
+
+/* -- ============ Custom Style for Select Box ============= -- */
+/* -- HTML 
+	<div class="custom-select">
+	<label>
+        <select name="">
+          <option selected="" disabled="">Option</option>
+          <option>Option</option>
+          <option>Option</option>
+        </select>
+    </label>
+    </div>
+*/
+.custom-select{width:100%; }
+.custom-select select {
+    margin-bottom:25px;
+    display: inline-block;
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    appearance:none;
+    cursor:pointer;
+	text-align:left;
+	width:100%;
+	height:53px;
+	padding-left:12px!important;
+	padding-top:9px!important;
+}
+.custom-select select option { background:#FFF;}
+.custom-select select option:hover { background:#00f5f5 !important;}
+option {
+    background-color: #ffffff;
+    color: #000000 ;
+}
+
+option:nth-child(even) {
+    background-color: #eeeeee;
+}
+/* Targetting Webkit browsers only. FF will show the dropdown arrow with so much padding. */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    .custom-select select {padding-right:18px}
+}
+
+.custom-select label {position:relative !important; display:block; }
+.custom-select label:after {
+    
+    color:#aaa;
+    -webkit-transform:rotate(90deg);
+    -moz-transform:rotate(90deg);
+    -ms-transform:rotate(90deg);
+    transform:rotate(90deg);
+    right:8px; top:2px;
+    padding:0 0 2px;
+    position:absolute;
+    pointer-events:none;
+}
+.custom-select label:before {
+    background:url(../img/select-bg.png) no-repeat left top;
+    content:'';
+    right:0px; top:0px;
+    width:54px; height:53px;
+    position:absolute;
+    pointer-events:none;
+    display:block;
+}
+

@@ -1,0 +1,150 @@
+.academic-main { background-color: #ffffff !important;}
+.academic-main .banner{background: url(../img/help-banner.jpg);  margin-top: 120px; min-height:383px; width:100%; }
+.academic-main .banner h1{font-size: 45px;color: #ffffff;font-weight: normal;margin-top: 100px;}
+.academic-main .banner p{font-size: 16px;color: #ffffff;font-weight: normal;}
+.academic-main .custom-select select{  background-color: transparent;color: #ffffff;font-size: 16px;}
+.academic-main input[type="text"] {   background-color: transparent;font-size: 14px;  height: 40px;font-weight: 500; color: #ffffff; font-family: arial; padding: 0px 10px;    width: 100%;   border: 1px solid #fff;}
+.academic-main .pricing-customseletbox {  width: 100%!important;}
+/*.academic-main .top-space {margin-top: 35px;}*/
+.academic-main .btn-block {background-color: #ffffff;color: #1f6fc2;border: none;border-radius: 0;height: 40px;}
+.academic-main .btn-block:hover{color:#ffffff;background-color:#107fc9}
+.academic-main .btn-lg {  padding: 6px 0px;}
+.academic-main .custom-select select {  height: 40px;  padding-top: 0px!important;  border-color: #fff;}
+.academic-main .selectbox-label:before{  top: 10px;  right: -23px;}
+.academic-main .top-space{margin-top: 60px;}
+.listing{border: 1px dashed #cbcbcb;  padding: 35px 35px 35px 35px; margin-top: 60px; }
+.listing h2{font-size: 22px;color:#6c6c6c;font-weight: 600;}
+.listing h2 span{font-weight: 100;}
+.listing ul li {border-bottom: 1px dashed #cbcbcb;padding-bottom: 10px;   line-height: 20px; padding-top: 15px;font-size: 14px;font-weight: normal;color: #6c6c6c;    font-style: normal;}
+.listing ul li a {font-size: 14px;font-weight: normal;color: #6c6c6c;font-style: normal;cursor: pointer;}
+.listing a{font-size: 14px;color: #bebebe;font-style: italic;}
+.listing a:hover{color: #2271c3}
+.logo-section{position: relative;}
+.logo-section div{  font-size: 25px;  display: inline-block;  border-left: 1px solid #eaeaea;  margin-top: 31px; position: absolute;  padding: 8px;  margin-left: 10px;  color: #878787;font-weight: 100;}
+.header-title .header-menu >ul> li:first-child > a:before{  content: url('../img/home-icon.png');
+  position: relative;
+  top: 2px;
+  left: -1px;}
+.listing-inner{min-height: 450px;}
+.academic-main .hr-line {  width: 150px;  border: 1px solid #2271c3; margin-bottom: 20px;}
+.btn-login{  padding: 9px 20px 9px 17px;}
+/*SCROLL TO TOP STYLE START*/
+div#scroll_up {
+    position: fixed;
+    height: 36px;
+    background: url(../img/scroll-arrow.png)no-repeat;
+    right: 25PX;
+    width: 36px;
+    bottom: 35px;
+    z-index: 2;
+}
+div#scroll_up:hover {
+    opacity: .7;
+}
+.move-up {
+    bottom: 73px!important;
+}
+
+::-webkit-input-placeholder {
+    color: #ffffff!important;
+    font-size: 14px !important;
+    font-weight: normal;
+    opacity: .4;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+    color:  #ffffff !important;
+    font-size: 14px !important;
+    font-weight: normal;
+    opacity: .4;
+}
+::-moz-placeholder {  /* Firefox 19+ */
+    color:  #ffffff !important;
+    font-size: 14px !important;
+    font-weight: normal;
+    opacity: .4;
+}
+:-ms-input-placeholder {  
+    color:  #ffffff !important;
+    font-size: 14px !important;
+    font-weight: normal;
+    opacity: .4;
+}
+/*Post type advanced search*/
+.p-type-advanced-search .btn-group,.btn-group-vertical{position:relative;display:inline-block;vertical-align:middle;width:100%;height:41px;border:#fff 1px solid}
+.p-type-advanced-search button.multiselect.dropdown-toggle.btn.btn-default{background:none;border:none;color:#fff;line-height:27px;width:100%;text-align:left}
+.p-type-advanced-search b.caret{float:right;margin-top:11px}
+ul.multiselect-container.dropdown-menu{width:100%}
+.p-type-advanced-search .custom-select label:before{background:none!important}
+.advanced_search i.fa.fa-external-link{color:#d7d7d7;font-size:14px}
+.query_ptype_text{position:absolute;top:-26px;border:solid 1px #1066be;padding:2px;display:none;min-width:120px;margin-left:-45px;width:auto}
+div#queried_ptype_icon{position:relative}
+h3.show_permalink{float:left}
+.clear{clear:both}
+div#queried_ptype_icon{float:left;margin:13px 0 0 10px;width:20px;text-align:left;margin-left:0;padding-left:0;line-height:17px}
+div#queried_ptype_icon i:hover{color:#1066be;font-size:14px}
+div#queried_ptype_icon:hover .query_ptype_text{display:none}
+.query_ptype_text:after{content:'';position:absolute;top:100%;left:45%;width:0;height:0;border-top:solid 5px #1066be;border-left:solid 5px transparent;border-right:solid 5px transparent}
+.academic-main .bottom-space{margin-bottom:60px}
+.custom-select label:before{display:none}
+#search_title_area #adv_search_count{background:url(../img/advanced_search_count.png);width:64px;height:69px;padding-top:20px;color:#fff;font-size:11px;text-align:center;float:left;margin-right:30px}
+#search_title_area div#adv_search_count span{color:#fff;font-size:26px;font-weight:600;line-height:17px;margin-bottom:0}
+div#search_title_area h3{color:#8c99a9;font-size:30px;font-weight:400}
+div#search_title_area{margin-bottom:40px;margin-top:20px}
+h3.show_permalink a{color:#729ecb;font-size:14px}
+.advanced_search .entry p{color:#8c99a9;line-height:26px}
+#target{color:#fff;margin-top:10px}
+#search_title_area span.adv_search_key{color:#677688;font-size:30px}
+.adv_search a{color:#506176;font-size:20px;letter-spacing:-.2px;font-weight:600}
+.pagination > li > a,.pagination > li > span{position:relative;float:left;padding:1px 6px!important;line-height:1.42857143;text-decoration:none;font-size:16px;color:#337ab7;background-color:#fff;border:1px solid #ddd;margin-left:-1px;font-weight:400}
+div#custom_search_pagination{float:right}
+a.adv_read_more{color:#696969;font-size:14px;font-style:italic;font-weight:100}
+a.adv_read_more:hover{color:#2A8CC8}
+div#replace_ajax{color:#6c6c6c;font-size:14px;margin-bottom:10px;line-height:20px}
+div#replacement_div h2{line-height:23px!important;padding-top:8px;margin-bottom: 0px;}
+.search-post-block h2 {    margin-bottom: -5px!important;}
+.search-post-block{margin-bottom: 10px;}
+@media only screen and (max-width : 1367px){
+    /*.listing{  min-height: 536px;}*/
+}
+@media only screen and (max-width : 1095px) and (min-width : 991px) {
+    .listing h2{  font-size: 19px;}
+    .listing-inner{min-height: 480px;}
+}
+@media only screen and (max-width :991px) and (min-width :768px) {
+    .academic-main .banner h1{  margin-top: 126px;}
+    .academic-main .top-space{  margin-top: 30px;}
+}
+@media only screen and (max-width : 768px)  {
+    .academic-main .banner h1{  margin-top: 66px;  font-size: 35px;}
+    .academic-main .custom-select label{margin-top: -35px;}
+     .listing-inner{min-height: 456px;}
+     .logo-section{text-align: center;}
+     .zh-home-navigation{display: none;}
+     .academic-main .pricing-customseletbox { width: 100%!important; margin-bottom: 15px;}
+}
+
+@media only screen and (max-width : 641px){
+    .academic-main .banner h1{  margin-top: 86px;  font-size: 28px;}
+    .academic-main .banner p{  font-size: 14px;}
+    .academic-main .top-space{  margin-top: 49px;}
+    .academic-main .custom-select select{  height: 30px;font-size: 14px;}
+    .academic-main .selectbox-label:before{  top: 5px; right: -23px;  width: 50px; height: 20px;}
+    .academic-main input[type="text"]{  font-size: 14px;  height: 30px;}
+    .academic-main .btn-block{  height: 30px;  font-size: 14px;}
+
+}
+
+@media only screen and (max-width : 435px){
+    .academic-main .banner h1{ margin-top: 73px;  font-size: 25px;}
+    .academic-main .banner p{font-size: 12px;}
+    .academic-main .custom-select label{  margin-top: -49px;}
+    .academic-main .set-width{width: 100%;}
+    .academic-main .btn-block{  margin-top: 21px;}
+}
+@media only screen and (max-width : 392px){
+    .listing h2{  font-size: 17px;}
+    /*.academic-main .banner p{display: none;}*/
+    .academic-main .banner h1{  margin-top: 75px;font-size: 21px;}
+
+}

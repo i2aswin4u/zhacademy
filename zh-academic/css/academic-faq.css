@@ -1,0 +1,26 @@
+.zh_faq_new li>ul.row, .zh_faq_new ul li ul .zh_faq_new_answer {display: none;}
+.zh_faq_new ul {list-style: none;}
+.zh_faq_new>ul>li {border-bottom: 1px solid #BEBEBE;margin-bottom: 10px;padding-bottom: 5px;}
+.zh_faq_new li>h2, .zh_faq_new li>h4 {cursor: pointer;}
+.zh_faq_new_answer { border: 1px solid #CFCFCF;padding: 10px;}
+.zh_faq_new p, .zh_faq_new img { margin: 10px;}
+.zh_faq_new img {margin-top: 0;max-width: 91%;height: auto;}
+.zh_faq_new li li {margin-bottom: 10px;padding-left: 15px;}
+.faq_url {display: none;}
+.zh_faq_new_answer.row {margin: 0;border: 1px solid #CFCFCF;border-top: none;}
+.zh_faq_new .row {margin-top: 0 !important;}
+.share_url_button, .share_url_url_box {float: left;padding: 4px 7px;border: 1px solid #DDDDDD;border-radius: 4px;}
+.share_url_button {max-width: 30%;cursor: pointer;margin-right: 10px;}
+.share_url_url_box {display : none;width: 70%;}
+.share_url_new_faq {min-height: 27px;margin: 10px;}
+.zh_faq_new_answer ul {list-style: circle;list-style-position: inside;}
+.academy-tab-active{background-color: #2271c3 !important;color: #ffffff !important;border-radius: 10px 10px 0px 0px;}
+.accademy-knowledge h2{font-size: 20px;color: #6c6c6c;font-weight: 400;padding-left: 25px;margin-bottom: 5px; margin-top: 3px;padding-bottom: 5px;padding-top: 5px;background-color: #fbfbfb;border-radius: 10px;}
+.accademy-knowledge h2 .add-btn{margin-top: 10px;margin-right: 15px;font-size: 20px;}
+.accademy-knowledge h4 .add-btn{margin-top: 10px;margin-right: 0px;font-size: 20px;}
+.accademy-knowledge h4{font-size: 18px;color: #6c6c6c;font-weight: normal;margin: 0;padding: 5px 0 !important;padding-left: 16px !important;padding-right: 15px !important;line-height: 40px;background-color: #f9fafc;}
+.accademy-knowledge h2:hover{background-color: #2271c3;border-radius: 10px;color: #fff;}
+.accademy-knowledge h4 .right-arrow{margin-right: 20px;margin-left: 20px;}
+.accademy-knowledge h4:hover{background-color: #2271c3;border-radius: 10px 10px 0px 0px;color: #fff;}
+.accademy-knowledge .knowledge-inner{padding-right: 15px;}
+.accademy-knowledge ul{padding-left: 0px;}
