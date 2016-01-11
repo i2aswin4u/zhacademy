@@ -1,0 +1,70 @@
+                <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+                    <h1 ><?php the_field('top_title_pricing_page'); ?></h1>
+                    <span id="pricing-table-second" ></span>
+                    <h2 id="pricing-table-first" class="bold"><?php the_field('bottom_content_princing_page'); ?></h2>
+                    <div class="custom-select">						
+                    <label class="selectbox-label">
+                        <select name="pricecountry" id="price-country">
+                     <option selected="">
+                           Choose your country for your special pricing
+                     </option>                                                                                   
+                    <?php  // Query for listing the name of custom post type in dropdown menu
+                    $the_queryprice = new WP_Query('post_type=pricing-countries&posts_per_page=-1');                 
+                    if ($the_queryprice->have_posts()) {
+                        while ($the_queryprice->have_posts()) {
+                            $the_queryprice->the_post();
+                            $postisof=get_the_ID();
+                            ?><option value="<?php echo $postisof?>"><?php the_title();?> </option><?php
+                        }wp_reset_query();
+                    }
+                    ?>
+                <script>     
+               $(document).ready(function()
+               {
+                   $("#price-country").change(function()
+                   {                     
+                       $.ajax({
+                           type  : 'POST',
+                           url   : 'http://192.168.1.254/wordpress_sites/zhhealthcare/wp-admin/admin-ajax.php/',
+                           data  : {
+                               'action': 'pricefun1',
+                               'postidis' : $(this).val()
+                           },
+                           success: function(response){
+                               console.log(response);
+                               response = response.substring(0, response.length - 1);
+                               response = JSON.parse(response);
+                              // console.log(response.message);
+                               $('.pricing-table').find('.priceValue1').html(response[0]);
+                               $('.pricing-table').find('.priceValue2').html(response[1]);
+                               $('.pricing-table').find('.priceValue3').html(response[2]);
+                               $('.pricing-table').find('.priceValue4').html(response[3]);                             
+                           },
+                           error: function(){
+                               console.log('error occured');
+                           }        
+                       });                                           
+                   });
+               });                             
+                </script>
+                    </select> </label>
+                    </div>
+                </div>
+
+
+
+
+<?php // code for pricing page
+add_action('wp_ajax_pricefun1', 'pricefun1');
+add_action('wp_ajax_nopriv_pricefun1', 'pricefun1');
+function pricefun1() {
+$getpostidis = $_POST['postidis'];
+$getvariable1v= get_field("flat_fee_essential_price", $getpostidis );
+$getvariable2v = get_field( "flat_fee_preferred_price", $getpostidis  );
+$getvariable3v = get_field( "pay_as_you_go_essential_price", $getpostidis  );
+$getvariable4v= get_field( "pay_as_you_go_preffered_price", $getpostidis  );
+$getvariable=array($getvariable1v,$getvariable2v,$getvariable3v,$getvariable4v);
+$return["json"] = json_encode($getvariable);
+  echo json_encode($getvariable);
+
+} // End Codes for pricing page ?>

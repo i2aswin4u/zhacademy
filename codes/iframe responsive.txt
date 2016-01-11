@@ -1,0 +1,14 @@
+ Make and iframe responsive 
+ 
+ <div class="wrapperiframe">
+                            <div class="h_iframe">
+                                <img class="ratio" src="http://placehold.it/16x9"/>
+                                <iframe src="https://www.youtube.com/embed/<?php echo $url_exploded[1]; ?>" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen></iframe>
+                            </div>
+                        </div>
+						
+						
+						.wrapperiframe         {width:100%;height:100%;margin:0 auto;}
+.h_iframe        {position:relative;}
+.h_iframe .ratio {display:block;width:100%;height:auto;}
+.h_iframe iframe {position:absolute;top:0;left:0;width:100%; height:100%;}

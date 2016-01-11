@@ -1,0 +1,14 @@
+ <div clss="prev-next-links">
+    <div class="prev-link">
+        <?php $prev_post = get_adjacent_post( true, '', true, 'study' ); ?>
+        <?php if ( is_a( $prev_post, 'WP_Post' ) ) { ?>
+               <a class ="btn btn-default" href="<?php echo get_permalink( $prev_post->ID ); ?>"><?php echo get_the_title( $prev_post->ID ); ?></a>
+        <?php } ?>
+     </div>
+    <div class="next-link">     
+        <?php $next_post = get_adjacent_post( true, '', false, 'study' ); ?>
+        <?php if ( is_a( $next_post, 'WP_Post' ) ) {  ?>
+                <a class= "btn btn-default" href="<?php echo get_permalink( $next_post->ID ); ?>"><?php echo get_the_title( $next_post->ID ); ?></a>
+         <?php } ?>
+    </div>
+ </div>

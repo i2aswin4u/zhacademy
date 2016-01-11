@@ -1,0 +1,52 @@
+// Help Doc (Groups taxanomy)Code for adding custom fields to taxanomy (Font awesome Img)
+/** change hook name with your taxanomy name. Here it is modules
+ * Add extra fields to custom taxonomy edit and add form callback functions
+ */
+// Edit taxonomy page
+function extra_edit_tax_fields_help($tag) {
+    // Check for existing taxonomy meta for term ID.
+    $t_id = $tag->term_id;
+    $term_meta = get_option( "taxonomy_$t_id" ); ?>
+    <tr class="form-field">
+    <th scope="row" valign="top"><label for="cat_Image_url"><?php _e( 'Font Awesome icon' ); ?></label></th>
+        <td>
+            <input type="text" name="term_meta[img]" id="term_meta[img]" value="<?php echo esc_attr( $term_meta['img'] ) ? esc_attr( $term_meta['img'] ) : ''; ?>">
+            <p class="description"><?php _e( 'Enter the class of font awesome icon for the particular modules.' ); ?></p>
+        </td>
+    </tr>
+<?php
+}
+add_action( 'groups_edit_form_fields', 'extra_edit_tax_fields_help', 10, 2 );
+
+// Add taxonomy page
+function extra_add_tax_fields_help( $tag ) {
+    // Check for existing taxonomy meta for term ID.
+    $t_id = $tag->term_id;
+    $term_meta = get_option( "taxonomy_$t_id" ); ?>
+    <div class="form-field">
+        <label for="cat_Image_url"><?php _e( 'Font Awesome icon' ); ?></label>
+        <input type="text" name="term_meta[img]" id="term_meta[img]" value="<?php echo esc_attr( $term_meta['img'] ) ? esc_attr( $term_meta['img'] ) : ''; ?>">
+        <p class="description"><?php _e( 'Enter the full class of font awesome for the category modules.' ); ?></p>
+    </div>
+<?php
+}
+add_action( 'groups_add_form_fields', 'extra_add_tax_fields_help', 10, 2 );
+
+// Save extra taxonomy fields callback function.
+function save_extra_taxonomy_fields_help( $term_id ) {
+    if ( isset( $_POST['term_meta'] ) ) {
+        $t_id = $term_id;
+        $term_meta = get_option( "taxonomy_$t_id" );
+        $cat_keys = array_keys( $_POST['term_meta'] );
+        foreach ( $cat_keys as $key ) {
+            if ( isset ( $_POST['term_meta'][$key] ) ) {
+                $term_meta[$key] = $_POST['term_meta'][$key];
+            }
+        }
+        // Save the option array.
+        update_option( "taxonomy_$t_id", $term_meta );
+    }
+}   
+add_action( 'edited_groups', 'save_extra_taxonomy_fields_help', 10, 2 );   
+add_action( 'create_groups', 'save_extra_taxonomy_fields_help', 10, 2 );   
+//add_action( '...Can't find hook to enable saving custom fields when adding a new term

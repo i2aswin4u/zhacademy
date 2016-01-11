@@ -1,0 +1,9 @@
+<?php
+if ( is_tag() ) {
+$term_id = get_query_var('tag_id');
+$taxonomy = 'post_tag';
+$args ='include=' . $term_id;
+$terms = get_terms( $taxonomy, $args );
+echo '<p> slug is ' . $terms[0]->slug . '</p>';
+}
+?>

@@ -1,0 +1,1 @@
+UPDATE wp_posts SET comment_status = REPLACE (comment_status, 'closed', 'open') WHERE post_status = 'publish' AND post_type = 'post';
