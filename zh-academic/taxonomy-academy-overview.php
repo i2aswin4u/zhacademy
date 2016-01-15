@@ -1,6 +1,7 @@
 <?php get_header('home');
 $_SESSION["academy"] = "overview";
 ?>
+<!-- File : taxonomy-academy-overview.php-->
 <div class="academic-main"> 
     <!-- Top Banner -->
     <div class="banner">
@@ -8,7 +9,7 @@ $_SESSION["academy"] = "overview";
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12 text-center">
                     <h1><?php $name = ot_get_option('search_banner_title');
-                              if ($name) {    echo $name;} else {    echo "Get Learning , Get Certified";} ?></h1>taxonomy-modules.php
+                              if ($name) {    echo $name;} else {    echo "Get Learning , Get Certified";} ?></h1>
                     <p class="bold"> 
                         <?php $name = ot_get_option('search_banner_sub_titile');
                               if ($name) {    echo $name;} else {    echo "Learn the simplicity & flexibility of the Blue EHS . Understand how it adapts to the way you practice your way.";} ?></p>
@@ -17,7 +18,6 @@ $_SESSION["academy"] = "overview";
             </div>
         </div>
     </div>
-    <div class="container-fluid">
         <!--Tabs Area Start-->    
         <!--Navigation Academy Terms start-->
         <div class="nav-tab-bg">
@@ -42,10 +42,10 @@ $_SESSION["academy"] = "overview";
                         </div>
                         <!--Small Screen Academy Menu stop-->
                         <div class="row">
-                            <div class="col-lg-3 col-md-2 colo-sm-12 col-xs-12">
+                            <div class="col-lg-3 col-md-3 colo-sm-12 col-xs-12">
                                 <?php get_sidebar(); ?>
                             </div>
-                            <div class="col-lg-9 col-md-10 col-sm-12 col-xs-12">
+                            <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
                                 <!-- Tab panes -->
 <!-- over view Content area starts-->
                                 <div class="margin-tb30 full-content">
@@ -65,29 +65,28 @@ $_SESSION["academy"] = "overview";
                                             ?>
                                             <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                                 <div class="content-section">
-                                                    <h2><i class="fa fa-file-text"></i> Help Documents</h2>                                                       
-                                                <?php
-                                                
+                                                    <h2><i class="fa fa-file-text"></i> Help Documents</h2>       
+                                                    <div class="documents">
+                                                <?php                                                
                                                     $i = 0;
                                                     foreach ($categories as $category) {
                                                     $term_id_is = $category->term_id;                                                   
                                                     if($i<4){
                                                  ?>
-                                                    <div class="documents">
+                                                    
                                                         <a href="<?php echo bloginfo('siteurl');?>/group/<?php echo $termparent;?>/">
                                                             <div>
                                                                 <?php echo $category->name;?> <i class="fa fa-angle-right"></i>
                                                             </div>
                                                         </a>
-                                                    </div>
+                                                    
                                                     <?php $i = $i+1;   }                                                                                                      
                                                     }
+                                                    ?></div> <?php
                                                     if($i != 0){ ?>
-                                                        <div class="documents">
                                                         <a href="<?php echo bloginfo('siteurl');?>/academy/help-document/">
                                                             <div class="more-btn">More</div>
                                                         </a>
-                                                    </div>
                                                    <?php }
                                                    else{
                                                    echo "No Post Found";                                                   
@@ -129,6 +128,7 @@ $_SESSION["academy"] = "overview";
                                                                 <h2>
                                                                     <i class="fa fa-play"></i> Video Tutorials                                                        
                                                                 </h2>
+                                                        <div class="videos">
                                                         <?php
                                                         while ($the_query->have_posts()) {
                                                             $the_query->the_post();
@@ -152,11 +152,10 @@ $_SESSION["academy"] = "overview";
                                                             <?php
                                                         }
                                                         ?>
-                                                        <div class="video-tutorials">
+                                                         </div>
                                                             <a href="<?php echo bloginfo('siteurl');?>/academy/video/">
                                                                  <div class="more-btn">More</div>
                                                              </a>
-                                                         </div>
                                                     </div>
                                             </div>
                                                         <?php
@@ -208,33 +207,34 @@ $_SESSION["academy"] = "overview";
                                                      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
                                                         <div class="content-section">
                                                             <h2><i class="fa fa-graduation-cap"></i> Detailed Courses</h2>
+                                                                <div class="courses">
                                                                 <?php
                                                                 while ( $the_query->have_posts() ) {
                                                                         $the_query->the_post();
                                                                            ?>
-                                                            <div class="detailed-courses">
-                                                               <div class="video-image">
-                                                            <?php  if ( has_post_thumbnail() ) {
-                                                                            the_post_thumbnail();
-                                                                    }
-                                                                    else {
-                                                                           ?> <a href=""><img src="<?php echo bloginfo('stylesheet_directory'); ?>/img/video-tutorial01.jpg"></a><?php 
-                                                                    }
-                                                                    ?>
-                                                                   
-                                                               </div>
-                                                               <div class="courses-content">
-                                                                   <h4><a href="<?php the_permalink();?>"><?php the_title();?></a></h4>
-                                                                   <p><a href="<?php the_permalink();?>"><?php echo substr(get_the_excerpt(), 0,100); ?></a></p>
-                                                               </div>
-                                                           </div>  <?php
+                                                                <div class="detailed-courses">
+                                                                   <div class="video-image">
+                                                                <?php  if ( has_post_thumbnail() ) {
+                                                                                the_post_thumbnail();
+                                                                        }
+                                                                        else {
+                                                                               ?> <a href=""><img src="<?php echo bloginfo('stylesheet_directory'); ?>/img/video-tutorial01.jpg"></a><?php 
+                                                                        }
+                                                                        ?>
+
+                                                                   </div>
+                                                                   <div class="courses-content">
+                                                                       <h4><a href="<?php the_permalink();?>"><?php the_title();?></a></h4>
+                                                                       <p><a href="<?php the_permalink();?>"><?php echo substr(get_the_excerpt(), 0,100); ?></a></p>
+                                                                   </div>
+                                                               </div> 
+                                                             <?php
                                                                 }
                                                                 ?>
-                                                                <div class="detailed-courses">
+                                                                    </div>                                                         
                                                                     <a href="<?php echo bloginfo('siteurl');?>/academy/course/">
                                                                         <div class="more-btn">More</div>
                                                                     </a>
-                                                                </div>
                                                             </div>
                                                     </div>
                                                                 <?php
@@ -295,11 +295,9 @@ $_SESSION["academy"] = "overview";
                                                                     } ?>
                                                                      </ul>
                                                                         </div>
-                                                                        <div class="faq">
                                                                             <a href="<?php echo bloginfo('siteurl');?>/academy/faq/">
                                                                                 <div class="more-btn">More</div>
                                                                             </a>
-                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                                      <?php
@@ -307,10 +305,6 @@ $_SESSION["academy"] = "overview";
                                                             }
                                                             wp_reset_postdata();
                                                             ?>
-<!--                                                            <li><a href="#">How can we directly go into a patients demographics form a mail?</a></li>
-                                                            <li><a href="#">How to attach file in a mail before sending it?</a></li>
-                                                            <li><a href="#">How to move mails into your personnel folder?</a></li>
-                                                            <li><a href="#">How to add new label?</a></li>-->
                                                         
                                         </div>
                                     </div>
@@ -327,15 +321,14 @@ $_SESSION["academy"] = "overview";
 
         <!--Tabs Navigation Modules Area Stop-->  
         <!--Contact Area start-->  
-        <div class="readmore padding-tb20">
-            <div class="container" <div="">
-                    <div class="col-md-12 col-sm-12 col-xs-12">
-                        <h4>You may also call <b>1-866-263-6512</b> to speak to a support representative <br>or email <b>support@zhservices.com</b></h4>
+            <div class="readmore padding-tb20">
+                <div class="container">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                           <h4><?php echo ot_get_option('footer_banner_text');?></h4>
+                        </div>
                     </div>
                 </div>
-            </div>
             <!--Contact Area stop-->  
 
-        </div>
     </div>
 <?php get_footer('home'); ?>

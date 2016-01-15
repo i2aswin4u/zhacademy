@@ -5,19 +5,20 @@
                     <a href="">
                         <img src="<?php echo bloginfo('stylesheet_directory'); ?>/img/academy-small.png" alt="">
                     </a>
-                    <p>2010 Corporate Ridge, Suite 700, McLean VA 22102 </p>
+                    <p><?php echo ot_get_option('text_below_logo');?></p>
                 </div>
                 <div class="col-md-6 col-sm-12 col-xs-12">
                     <div class="social-media text-right">
                         <ul>
-                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
-                            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                            <li><a href="<?php echo ot_get_option('facebook');?>"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="<?php echo ot_get_option('linked_in');?>"><i class="fa fa-google-plus"></i></a></li>
+                            <li><a href="<?php echo ot_get_option('google_plus');?>"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="<?php echo ot_get_option('twitter');?>"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="<?php echo ot_get_option('you_tube');?>"><i class="fa fa-youtube"></i></a></li>
                         </ul>
                     </div>
-                    <p class="text-right">Copyright 2015 � ZH Healthcare LLC. All rights reserved </p>
+                    <!--<p class="text-right"> <?php// echo ot_get_option('text_below_social_media_icons');?></p>-->
+                    <p class="text-right"> Copyright <?php echo date("Y"); ?> &COPY; ZH Healthcare LLC. All rights reserved</p>
                 </div>
             </div>  
         </div>     
@@ -33,7 +34,6 @@
         }
     })
     $(document).ready(function() {
-        debugger;
         if($('#posttype-multiple-selected').children('option:selected').length === 0){
             $('#posttype-multiple-selected').children('option').attr('selected',"selected");
         }
@@ -134,38 +134,13 @@
                 }
             });
         });  
-              //  Modules selection for help document for desktop
-//        $('.modules-list-section-help-doc li').click(function(){
-//          var module_slug;
-//          module_slug = $(this).attr("id");
-//          var ajaxurl = "<?php echo admin_url('admin-ajax.php');?>";          
-//            jQuery.post(
-//                ajaxurl, 
-//                {
-//                    'action': 'session_ajax',
-//                    'modules': module_slug,
-//                    'academy':'<?php echo $_SESSION["academy"];?>',
-//                    'product':'<?php echo $_SESSION["product"];?>',
-//                    'dataType': 'html'
-//                },     
-//                function(response){
-//                var blogUrl = '<?php echo bloginfo('siteurl'); ?>';
-//                location.href=blogUrl+'/group/'+<?php echo $_SESSION["module"];?>;
-////                location.reload();
-//                }
-//            ); 
-//
-//       });
-
-    });
-    
+    });    
 </script>
 
  <script type="text/javascript">             
     $(document).ready(function(){
  // Modules selection 
         $('.modules-list-section li').click(function(e){
-//          alert($(this).attr("id")); debbugger;
           e.preventDefault();
           var module_slug;
           module_slug = $(this).attr("id");
@@ -181,8 +156,6 @@
                     'dataType': 'html'
                 },     
                 function(response){
-            ;
-//                     alert('ash The server responded: ' + response);
                 location.reload();
                 }
             ); 
@@ -213,7 +186,6 @@
        });
 // Academy menu session variable ajax
         $('.academy-list-selecion li a').click(function(e){
-//          alert($(this).attr("id")); debbugger;
          e.preventDefault();
           var module_slug, load_url;
           academy_slug = $(this).attr("title");
@@ -229,20 +201,19 @@
                     'dataType': 'html'
                 },     
                 function(response){
-                //   alert('ash The server responded: ' + response);
-                //   location.reload();
-                ///  console.log(load_url.href+'tttttt');
                 location.href = load_url.href;
                 }
             ); 
 
        });
-
-    
-       });                              
+  });                              
 </script>
 <script type="text/javascript">
 $( document ).ready(function() {
+//    Clipboard for URL Share
+    $(document).ready(function(){
+     var teddy =  new Clipboard('.btn-clipboard'); 
+    });
     // Set active class for modules sidebar big
     $( ".modules-list-section li" ).each(function() {
       if($(this).attr("id") == '<?php echo $_SESSION['modules'];?>'){
@@ -259,7 +230,21 @@ $( document ).ready(function() {
           $( this ).removeClass( "active" );
       }
     });   
+//    Set Down-Up arrow for accordian
+    $('.panel-heading a').click(function(){
+       var value = $(this).attr('aria-expanded');
+       $('.panel-heading a i').removeClass( "fa fa-angle-up" ).addClass("fa fa-angle-down");
+       $('.panel-heading').removeClass( "active" );
+       if(value == 'false'){          
+            $(this).children('i').removeClass( "fa fa-angle-down" ).addClass("fa fa-angle-up");
+            $(this).parent('.panel-title').addClass( "active" );
+            $(this).closest('.panel-heading').addClass( "active" );
+       }
+    });
+    //Aviod Redundancy in academy mobile menu
+    $('.selectListInnerWrap dl dd.itm-0').css('display','none');
 });
+
 </script>
 <!-- Start of Async HubSpot Analytics Code -->
 <script type="text/javascript">

@@ -1,6 +1,7 @@
 <?php get_header('home');
 $_SESSION["academy"] = "course";
 ?>
+<!-- File : taxonomy-academy-course.php.php-->
 <div class="academic-main"> 
     <!-- Top Banner -->
     <div class="banner">
@@ -8,7 +9,7 @@ $_SESSION["academy"] = "course";
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12 text-center">
                     <h1><?php $name = ot_get_option('search_banner_title');
-                              if ($name) {    echo $name;} else {    echo "Get Learning , Get Certified";} ?></h1>  <h4> taxonomy-academy-course.php</h4>
+                              if ($name) {    echo $name;} else {    echo "Get Learning , Get Certified";} ?></h1>  
                     <p class="bold"> 
                         <?php $name = ot_get_option('search_banner_sub_titile');
                               if ($name) {    echo $name;} else {    echo "Learn the simplicity & flexibility of the Blue EHS . Understand how it adapts to the way you practice your way.";} ?></p>
@@ -17,7 +18,6 @@ $_SESSION["academy"] = "course";
             </div>
         </div>
     </div>
-    <div class="container-fluid">
         <!--Tabs Area Start-->    
         <!--Navigation Academy Terms start-->
         <div class="nav-tab-bg">
@@ -35,18 +35,17 @@ $_SESSION["academy"] = "course";
                 <?php include("mobile_menu.php"); ?>     
             </div>
                         <!--Small Screen Academy Menu stop-->
-
                         <div class="row">
-                            <div class="col-lg-3 col-md-2 colo-sm-12 col-xs-12">
+                            <div class="col-lg-3 col-md-3 colo-sm-12 col-xs-12">
                               <?php get_sidebar(); ?>
                             </div>
-                            <div class="col-lg-9 col-md-10 col-sm-12 col-xs-12 academic-main ">
+                            <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 academic-main ">
                                 <!-- Tab panes -->
 <!-- over view Content area starts-->
                           <div class="margin-tb30">
                             <div class="inner-detail">
                                 <div class="row">
-                                    <div class="col-lg-9 col-md-6 col-sm-12 col-xs-12 reporting">
+                                    <div class="col-lg-9 col-md-8 col-sm-12 col-xs-12 reporting">
                                         <div class="content-section">
                                             <?php 
                                             $current_moule       = $_SESSION["modules"];
@@ -56,33 +55,9 @@ $_SESSION["academy"] = "course";
                                             $term_meta           = get_option("taxonomy_$t_id");
                                             $module_fa_icon      = $term_meta[img];
                                             ?>                                                                                            
-                                            <h3 class="line"><span><i class="<?php echo $module_fa_icon;?>"></i> <?php echo $current_module_name;  ?> </span></h3>
-                                            <div class="row">
-                                                <?php 
-                                                    if ( have_posts() ) {
-                                                            while ( have_posts() ) {
-                                                                    the_post(); 
-                                                ?>
-<!--                                                   <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                                                    <div class="video-sm">
-                                                        <?php
-//                                                            if ( has_post_thumbnail() ) {
-//                                                                    the_post_thumbnail();
-//                                                            }
-//                                                            else {
-                                                                    ?>  <a href="#"><img src="<?php //bloginfo('template_directory');?>/img/video-sm.jpg" class="img-responsive"></a> <?php 
-                                                            }
-                                                            ?>                                                                                                      
-                                                        <h3> <a href="<?php// the_permalink();?>"><?php the_title();?></a></h3>
-                                                        <p><?php //echo substr(get_the_excerpt(), 0,100); ?>..</p>
-                                                        <a href="<?php //the_permalink();?>" class="view-btn">View Video</a>
-                                                    </div>
-                                                 </div>-->
-                                                  <?php                                                                                                
-                                                          //  } // end while
-                                                    } // end if
-                                                    ?>
-                                                
+                                            <!--<h3 class="line"><span><i class="fa <?php echo $module_fa_icon;?>"></i> <?php echo $current_module_name;  ?> </span></h3>-->
+                                              <h3 class="line"><span><i class="fa <?php if ($term_meta[img]) {  echo $term_meta[img]; } else {  echo 'fa-cogs'; } ?>"></i> <?php echo $term->name; ?></span></h3>            
+                                            <div class="row">                                                
                                                     <?php 
                                                        $args = array(
                                                         'post_type' => 'post',
@@ -123,7 +98,7 @@ $_SESSION["academy"] = "course";
                                                             ?>                                                                                                      
                                                         <h3> <a href="<?php the_permalink();?>"><?php the_title();?></a></h3>
                                                         <p><?php echo substr(get_the_excerpt(), 0,100); ?>..</p>
-                                                        <a href="<?php the_permalink();?>" class="view-btn">View Video</a>
+                                                        <a href="<?php the_permalink();?>" class="view-btn">View Course</a>
                                                     </div>
                                                  </div>
                                                        <?php }
@@ -137,21 +112,10 @@ $_SESSION["academy"] = "course";
                                                     }
                                                     wp_reset_postdata();
                                                     ?>
-
-
-<!--                                                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-                                                    <div class="video-sm">
-                                                        <a href="#"><img src="<?php// bloginfo('template_directory');?>/img/video-sm.jpg" class="img-responsive"></a>
-                                                        <h3> <a href="#">Composing a Message</a></h3>
-                                                        <p>The Settings option pops upon clicking the area marked above, which allows you to add, upgrade or remove..</p>
-                                                        <a href="#" class="view-btn">View Course</a>
-                                                    </div>
-                                                </div>-->
                                             </div>
                                         </div>
                                     </div>
-
-                                   <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                                   <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
                                         <?php include("leftsidebar.php"); ?>
                                    </div>
                             </div>
@@ -161,24 +125,16 @@ $_SESSION["academy"] = "course";
                             </div>
                         </div>
                     </div> 
-
-                </div>
-            </div>
-        </div>
-
-
         <!--Tabs Navigation Modules Area Stop-->  
         <!--Contact Area start-->  
         <div class="readmore padding-tb20">
-            <div class="container" <div="">
+            <div class="container">
                     <div class="col-md-12 col-sm-12 col-xs-12">
-                        <h4>You may also call <b>1-866-263-6512</b> to speak to a support representative <br>or email <b>support@zhservices.com</b></h4>
+                        <h4><?php echo ot_get_option('footer_banner_text');?></h4>
                     </div>
                 </div>
             </div>
             <!--Contact Area stop-->  
-
-        </div>
     </div>
 <script type="text/javascript">
     $(document).on("keyup", function(e) {

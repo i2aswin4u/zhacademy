@@ -11,7 +11,7 @@
         ?>
          <li id="<?php echo $tax_term->slug; ?>">
              <a href="<?php echo bloginfo('siteurl');?>/group/<?php echo $tax_term->slug;?> ">
-                 <i class="<?php if ($term_meta[img]) {  echo $term_meta[img]; } else { echo 'fa fa-cogs'; } ?>"></i>
+                 <i class="fa <?php if ($term_meta[img]) {  echo $term_meta[img]; } else { echo 'fa fa-cogs'; } ?>"></i>
                     <?php echo $tax_term->name; ?>
              </a>
          </li>                                            

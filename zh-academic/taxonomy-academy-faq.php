@@ -32,17 +32,16 @@ foreach ($tax_terms as $tax_term) {
 }
 $current_post_id = $post->ID;
 ?>
-
-                <!--start of new design-->
+<!-- File : taxonomy-academy-faq.php-->
+<!--start of new design-->
 <div class="academic-main">
-
     <!-- Top Banner -->
     <div class="banner">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12 text-center">                                                                       
                     <h1><?php $name = ot_get_option('search_banner_title');
-                              if ($name) {    echo $name;} else {    echo "Get Learning , Get Certified";} ?></h1><h4> taxonomy-academy-faq.php</h4>
+                              if ($name) {    echo $name;} else {    echo "Get Learning , Get Certified";} ?></h1>
                     <p class="bold"> 
                         <?php $name = ot_get_option('search_banner_sub_titile');
                               if ($name) {    echo $name;} else {    echo "Learn the simplicity & flexibility of the Blue EHS . Understand how it adapts to the way you practice your way.";} ?></p>
@@ -71,15 +70,15 @@ $current_post_id = $post->ID;
                     </div>
 
                     <div class="row">
-                        <div class="col-lg-3 col-md-2 colo-sm-12 col-xs-12">
+                        <div class="col-lg-3 col-md-3 colo-sm-12 col-xs-12">
                            <?php include("sidebar-tax-groups.php"); ?> 
                         </div>
-                        <div class="col-lg-9 col-md-10 col-sm-12 col-xs-12">
+                        <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
                             <!-- Tab panes -->
                             <div class="margin-tb30">
                                 <div class="inner-detail">
                                     <div class="row">
-                                        <div class="col-lg-9 col-md-6 col-sm-12 col-xs-12 reporting">
+                                        <div class="col-lg-9 col-md-8 col-sm-12 col-xs-12 reporting">
                                             <?php 
                                                     $term_list = wp_get_post_terms($post->ID, 'academy', array("fields" => "all"));                                                   
                                                     foreach ($term_list as $term_li){
@@ -96,7 +95,7 @@ $current_post_id = $post->ID;
                                                                     $term = get_term( $id_term, 'modules' );
                                                                     $term_meta = get_option("taxonomy_$id_term");
                                                                  ?>
-                                                                 <h3 class="line"><span><i class="<?php if ($term_meta[img]) {  echo $term_meta[img]; } else {  echo 'fa fa-cogs'; } ?>"></i> <?php echo $term->name; ?></span></h3>                                                                                                                                
+                                                                 <h3 class="line"><span><i class="fa <?php if ($term_meta[img]) {  echo $term_meta[img]; } else {  echo 'fa-cogs'; } ?>"></i> <?php echo $term->name; ?></span></h3>                                                                                                                                
                                                                 <!--<h3 class="line"><span><i class="fa fa-edit"></i> Reporting</span></h3>-->
                                                                     <div class="panel-group" id="accordion">
                                                                     <?php
@@ -129,16 +128,28 @@ $current_post_id = $post->ID;
                                                                                     $the_query->the_post(); 
                                                                                     $i++;
                                                                                     ?>
-
+<!--Accordian Section-->
                                                                                 <div class="panel panel-default">
                                                                                     <div class="panel-heading">
                                                                                         <h4 class="panel-title">
-                                                                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse<?php echo $i;?>" class="collapsed" aria-expanded="false"><?php the_title();?></a>
+                                                                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse<?php echo $i;?>" class="collapsed" aria-expanded="false"><?php the_title();?>
+                                                                                                <i class="fa fa-angle-down"></i>
+                                                                                            </a>
                                                                                         </h4>
                                                                                     </div>
                                                                                     <div id="collapse<?php echo $i;?>" class="panel-collapse collapse" aria-expanded="false">
                                                                                         <div class="panel-body">
                                                                                             <p><?php the_content();?></p>
+                                                                                             <div id="copy-clipboard" class="example">
+                                                                                                <div class="input-group">
+                                                                                                    <input id="ash_<?php echo get_the_id();?>" type="text" readonly value="<?php the_permalink();?>">
+                                                                                                    <span class="input-group-button">
+                                                                                                        <button class="btn-clipboard btn" type="button"  data-toggle="tooltip" data-placement="left" title="Copy To Clipboard"  data-clipboard-demo="" data-clipboard-target="#ash_<?php echo get_the_id();?>">
+                                                                                                            <i class="fa fa-clipboard"width="13" alt="Copy to clipboard"></i>
+                                                                                                        </button>
+                                                                                                    </span>
+                                                                                                </div>
+                                                                                            </div>
                                                                                         </div>
                                                                                     </div>
                                                                             </div>
@@ -146,8 +157,7 @@ $current_post_id = $post->ID;
                                                               <?php                                                                             
                                                                     }
                                                             } else {
-                                                                echo "No Post found ";
-                                                                //.$term->name;                                                              
+                                                                echo "No Post found ";                                                           
                                                             }  
                                                             wp_reset_postdata();
                                                          //   <!--IF FAQ STOP-->                                                            
@@ -160,9 +170,9 @@ $current_post_id = $post->ID;
                                                    $destname = get_term_by('slug',$_SESSION["modules"],'modules'); 
                                                    $id_term  = $destname->term_taxonomy_id;                                                   
                                                    $term = get_term( $id_term, 'modules' );
-                                                   $term_meta = get_option("taxonomy_$id_term");                                                   var_dump($term_meta);
+                                                   $term_meta = get_option("taxonomy_$id_term");                         
                                                 ?>
-                                                <h3 class="line"><span><i class="<?php if ($term_meta[img]) {  echo $term_meta[img]; } else {  echo 'fa fa-cogs'; } ?>"></i> <?php echo $term->name;  ?></span></h3>
+                                                <h3 class="line"><span><i class="fa <?php if ($term_meta[img]) {  echo $term_meta[img]; } else {  echo 'fa-cogs'; } ?>"></i> <?php echo $term->name;  ?></span></h3>
                                                 <div class="row">                                                                                                        
                                                      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                                         <div class="video-lg-section">
@@ -217,7 +227,6 @@ $current_post_id = $post->ID;
                                                     foreach ($term_list as $term_li){
                                                         $term_name = $term_li->name;
                                                         $term_slug = $term_li->slug;    
-                                                     //   if($term_li->slug == 'video'){
                                                           ?>
                                                 <div class="row">
                                                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">                 
@@ -293,7 +302,7 @@ $current_post_id = $post->ID;
                                         </div>
                                         </div>
                                         </div>
-                                        <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                                        <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
                                             <?php include("leftsidebar.php"); ?>
                                         </div>
                                     </div>
@@ -305,70 +314,14 @@ $current_post_id = $post->ID;
             </div>
         </div>
         <div class="readmore padding-tb20">
-            <div class="container" <div="">
+            <div class="container">
                     <div class="col-md-12 col-sm-12 col-xs-12">
-                        <h4>You may also call <b>1-866-263-6512</b> to speak to a support representative <br>or email <b>support@zhservices.com</b></h4>
+                        <h4><?php echo ot_get_option('footer_banner_text');?></h4>
                     </div>
                 </div>
             </div>
         </div>
 
     </div>
-
-    <!--end of new design-->
-    <!--    <div class="container-fluid">
-            <div class="row ">
-                <div class="bannerbtm-txtouter">
-                           <div clss="prev-next-links">
-                            <div class="prev-link">
-    <?php // if ($prev_term->name) { ?>
-                                    <a class="btn btn-default" href="<?php // bloginfo(url);  ?>/group/<?php // echo $prev_term->slug;  ?>">Previous  Module<?php //echo " " . $prev_term->name;  ?></a>
-    <?php // } ?>
-                            </div>
-                            <div class="next-link">
-    <?php //if ($next_term->name) { ?>
-                                    <a class="btn btn-default" href="<?php // bloginfo(url);  ?>/group/<?php //echo $next_term->slug;  ?>">Next Module<?php // echo " " . $next_term->name;  ?></a> 
-    <?php //} ?>
-                            </div>               
-                        </div>                                                 
-                </div>      
-            </div>      
-        </div> -->
 </div>
-<script type="text/javascript">
-$(document).on("keyup", function(e) {
-    var key = e.keycode ? e.keycode : e.which;
-    if (key === 13) {
-        selectFunctionClick();
-    }
-})
-$(document).ready(function() {
-    $('#posttype-multiple-selected').multiselect({
-        includeSelectAllOption: true,
-        selectAllValue: 'any'
-    });
-    $("#target").hide();
-});
-
-$(function() {
-    $(".multiselect-container li:not(:first) :input[type='checkbox']").click();
-});
-function selectFunctionClick() {
-    var x;
-    x = document.getElementById("custom_search").value;
-    if (x == "")
-    {
-        $("#target").show();
-    }
-    else {
-        var values = $('#posttype-multiple-selected').val();
-        var multiSelectValues = "";
-        values.map(function(item) {
-            multiSelectValues += item + ",";
-        });
-        $("#multiple_post").val(multiSelectValues);
-        $('#searchform').submit();
-    }
-}
-</script>
 <?php get_footer('home'); ?>

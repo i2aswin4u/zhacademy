@@ -12,7 +12,7 @@
             </div>
         </div>
     </div>
-    <div class="container-fluid">        
+<div class="container-fluid">        
         
 <!--Modules Boxes-->        
 <div class="row">
@@ -33,7 +33,7 @@
             <div class="col-md-3 col-sm-4 col-xs-6">
                 <div class="modules" id="<?php echo $tax_term->slug; ?>">
                     <a href="<?php echo  esc_attr(get_term_link($tax_term, $taxonomy));?>">
-                        <i class="<?php if($term_meta[img]) {echo $term_meta[img];} else {echo 'fa fa-cogs';}?>"></i> 
+                        <i class="fa <?php if($term_meta[img]) {echo $term_meta[img];} else {echo 'fa-cogs';}?>"></i> 
                         
                         <h2 class="line"><span><?php echo $tax_term->name; ?></span></h2>
                         <p><?php echo $tax_term->description ;?> </p>
@@ -48,7 +48,9 @@
     </div>
 </div>
     
-    
+</div>
+</div>
+
     <div class="readmore">
         <div class="container">
             <div class="row">
@@ -103,7 +105,5 @@
             </div>
         </div>
         
-        </div>
-    </div>
 </div>
 <?php get_footer('home'); ?>

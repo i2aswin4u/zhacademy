@@ -6,7 +6,7 @@
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12 text-center">
                     <h1><?php $name = ot_get_option('search_banner_title');
-                              if ($name) {    echo $name;} else {    echo "Get Learning , Get Certified";} ?></h1>taxonomy-modules.php
+                              if ($name) {    echo $name;} else {    echo "Get Learning , Get Certified";} ?></h1>taxonomy-modules.php 
                     <p class="bold"> 
                         <?php $name = ot_get_option('search_banner_sub_titile');
                               if ($name) {    echo $name;} else {    echo "Learn the simplicity & flexibility of the Blue EHS . Understand how it adapts to the way you practice your way.";} ?></p>
@@ -94,7 +94,6 @@
                                             </div> 
                                                     <?php } ?>
 <!--Video Section Overview start-->                                            
-                                            
                                                     <?php
                                                     $cat=$_SESSION["modules"];
                                                     $args = array(
@@ -158,13 +157,7 @@
                                                     </div>
                                             </div>
                                                         <?php
-                                                    } else {
-                                                        
-                                                        ?>
-<!--                                                        <div class="no-post">
-                                                            No Post Found
-                                                        </div>-->
-                                                        <?php
+                                                    } else {                                                        
                                                     }
                                                     wp_reset_postdata();
                                                     ?>
@@ -195,12 +188,7 @@
                                                                         ),
                                                                 ),
                                                         );
-
-
-                                                        // The Query
                                                         $the_query = new WP_Query( $args );
-                                                        //var_dump($the_query);
-                                                        // The Loop
                                                         if ( $the_query->have_posts() ) {
                                                             ?>
                                                      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
@@ -237,78 +225,60 @@
                                                     </div>
                                                                 <?php
                                                         } else {                                                                
-                                                        ?>
-<!--                                                        <div class="no-post">
-                                                            No Post Found
-                                                        </div>-->
-                                                        <?php
                                                         }
                                                         wp_reset_postdata();
-
-                                                        ?>                                                   
-                                                    
-
-                                            
-                                                            <?php
-                                                            $args = array(
-                                                                    'post_type' => 'post',
-                                                                    'posts_per_page' => '4',
-                                                                    'tax_query' => array(
-                                                                            'relation' => 'AND',
-                                                                            array(
-                                                                            'taxonomy' => 'modules', // modules (rep)
-                                                                            'field' => 'slug',
-                                                                            'terms' => array($_SESSION["modules"]),
-                                                                            ),
-                                                                            array(
-                                                                                'taxonomy' => 'product', // (oemr/blue-product)
-                                                                                'field' => 'slug',
-                                                                                'terms' => array($_SESSION["product"]),
-                                                                            ),
-                                                                            array(
-                                                                                'taxonomy' => 'academy', // (academy)
-                                                                                'field' => 'slug',
-                                                                                'terms' => array('faq'),
-                                                                            ),
-                                                                    ),
-                                                            );
-
 //Knowledge Base Area staRT
-                                                            // The Query
-                                                            $the_query = new WP_Query( $args );
-                                                            //var_dump($the_query);
-                                                            // The Loop
-                                                            if ( $the_query->have_posts() ) {
-                                                                ?>
-                                                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                                                             <div class="content-section">
-                                                                 <h2><i class="fa fa-question"></i> Knowledge Base (FAQ)</h2>
-                                                                 <div class="faq">
-                                                                     <ul class="list-items">
-                                                                <?php
-                                                                    while ( $the_query->have_posts() ) {
-                                                                            $the_query->the_post();
-//                                                                            echo '<li>' . the_title() . '</li>';
-                                                                     ?><li><a href="<?php the_permalink();?>"><?php the_title();?></a></li><?php
-                                                                    } ?>
-                                                                     </ul>
-                                                                        </div>
-                                                                        <div class="faq">
-                                                                            <a href="<?php echo bloginfo('siteurl');?>/academy/faq/">
-                                                                                <div class="more-btn">More</div>
-                                                                            </a>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                     <?php
-                                                            } else {                                                              
-                                                            }
-                                                            wp_reset_postdata();
-                                                            ?>
-<!--                                                            <li><a href="#">How can we directly go into a patients demographics form a mail?</a></li>
-                                                            <li><a href="#">How to attach file in a mail before sending it?</a></li>
-                                                            <li><a href="#">How to move mails into your personnel folder?</a></li>
-                                                            <li><a href="#">How to add new label?</a></li>-->
+                                            $args = array(
+                                                    'post_type' => 'post',
+                                                    'posts_per_page' => '4',
+                                                    'tax_query' => array(
+                                                            'relation' => 'AND',
+                                                            array(
+                                                            'taxonomy' => 'modules', // modules (rep)
+                                                            'field' => 'slug',
+                                                            'terms' => array($_SESSION["modules"]),
+                                                            ),
+                                                            array(
+                                                                'taxonomy' => 'product', // (oemr/blue-product)
+                                                                'field' => 'slug',
+                                                                'terms' => array($_SESSION["product"]),
+                                                            ),
+                                                            array(
+                                                                'taxonomy' => 'academy', // (academy)
+                                                                'field' => 'slug',
+                                                                'terms' => array('faq'),
+                                                            ),
+                                                    ),
+                                            );
+
+                                            // The Query
+                                            $the_query = new WP_Query( $args );
+                                            if ( $the_query->have_posts() ) {
+                                                ?>
+                                            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                                             <div class="content-section">
+                                                 <h2><i class="fa fa-question"></i> Knowledge Base (FAQ)</h2>
+                                                 <div class="faq">
+                                                     <ul class="list-items">
+                                                        <?php
+                                                        while ( $the_query->have_posts() ) {
+                                                                $the_query->the_post();
+                                                         ?><li><a href="<?php the_permalink();?>"><?php the_title();?></a></li><?php
+                                                        } ?>
+                                                     </ul>
+                                                 </div>
+                                                <div class="faq">
+                                                    <a href="<?php echo bloginfo('siteurl');?>/academy/faq/">
+                                                        <div class="more-btn">More</div>
+                                                    </a>
+                                                </div>
+                                             </div>
+                                            </div>
+                                                     <?php
+                                            } else {                                                              
+                                            }
+                                            wp_reset_postdata();
+                                            ?>
                                                         
                                         </div>
                                     </div>
@@ -328,14 +298,11 @@
         <div class="readmore padding-tb20">
             <div class="container" <div="">
                     <div class="col-md-12 col-sm-12 col-xs-12">
-                        <h4>You may also call <b>1-866-263-6512</b> to speak to a support representative <br>or email <b>support@zhservices.com</b></h4>
+                        <h4><?php echo ot_get_option('footer_banner_text');?></h4>
                     </div>
                 </div>
             </div>
-            <!--Contact Area stop-->  
-
+         <!--Contact Area stop-->  
         </div>
     </div>
-
-
 <?php get_footer('home'); ?>

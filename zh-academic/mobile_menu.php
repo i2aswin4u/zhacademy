@@ -9,9 +9,8 @@
                $t_id = $tax_term->term_id;
                $term_meta = get_option("taxonomy_$t_id");
                ?>
-               <option  value="<?php echo $tax_term->slug; ?>" class="<?php if ($term_meta[img]) {  echo $term_meta[img]; } else {  echo 'fa fa-cogs'; } ?>"> <?php echo $tax_term->name; ?></option>                
+               <option  value="<?php echo $tax_term->slug; ?>" class="<?php if ($term_meta[img]) {  echo $term_meta[img]; } else {  echo 'fa-cogs'; } ?>"> <?php echo $tax_term->name; ?></option>                
            <?php } ?>
-               ?
            </select>
    </div>
 </div>

@@ -37,7 +37,7 @@ nav ul li:hover ul { top: 100%; opacity: 1; z-index: 100; height: auto;overflow:
 a.btn-login{color:#666;margin-right :10px;}
 /* Button Styles */
 .header-title{ /* padding-bottom: 30px;*/}
-.header-menu{margin-top: 30px;}
+.header-menu{margin-top: 10px;}
 .header-menu ul{ border: none;}
 .header-menu ul li ul{border: solid 1px #e7ebee;-webkit-border-radius: 3px 3px 3px 3px; -moz-border-radius: 3px 3px 3px 3px;border-radius: 3px 3px 3px 3px;}
 .header-menu ul li a:hover{color: #127ec9; background-color: transparent;font-weight: 500;}
@@ -60,14 +60,14 @@ a.btn-login{color:#666;margin-right :10px;}
 .academic-main .banner{
    background: #0a6bce;  
    margin-top: 120px; 
-   min-height:280px; 
+   min-height:237px; 
    width:100%; 
 }
 .academic-main .banner h1{
    font-size: 45px;
    color: #ffffff;
    font-weight: normal;
-   margin-top: 70px;
+   margin-top: 35px;
 }
 .academic-main .banner p{
    font-size: 16px;
@@ -168,17 +168,18 @@ a.btn-login{color:#666;margin-right :10px;}
 }
 .logo-section {
   position: relative;
+  margin-top: -15px;
 }
-.logo-section div {  
-  font-size: 25px;  
-  display: inline-block;  
-  border-left: 1px solid #eaeaea;  
-  margin-top: 31px; 
-  position: absolute;  
-  padding: 8px;  
-  margin-left: 10px;  
-  color: #878787;
-  font-weight: 100;
+.logo-section div {
+    font-size: 25px;
+    display: inline-block;
+    border-left: 1px solid #eaeaea;
+    margin-top: 31px;
+    position: absolute;
+    padding: 8px;
+    margin-left: 10px;
+    color: #878787;
+    font-weight: 100;
 }
 .academic-main .accademy-modules h2.line {
     text-align: center;
@@ -345,6 +346,8 @@ a.btn-login{color:#666;margin-right :10px;}
 }
 .academic-footer {
   margin: 30px 0;
+  padding: 0;
+  background: none;
 }
 .academic-footer .social-media ul{
   height: 36px;
@@ -374,6 +377,11 @@ a.btn-login{color:#666;margin-right :10px;}
 }
 .academic-footer .social-media ul li .fa-youtube { 
     background: #e02f2f;
+}
+.academic-footer .social-media ul li .fa-facebook:hover, .academic-footer .social-media ul li .fa-google-plus:hover,
+.academic-footer .social-media ul li .fa-linkedin:hover, .academic-footer .social-media ul li .fa-twitter:hover,
+.academic-footer .social-media ul li .fa-youtube:hover {
+  background: #D2D2D2;
 }
 .academic-footer p{
   padding-top: 10px;
@@ -407,7 +415,7 @@ a.btn-login{color:#666;margin-right :10px;}
 
 /* accademic inner */
 .academic-main .nav-tab-bg{
-  background: #f9f9f9;
+  background: #F3F3F3;
 }
 .academic-main .nav-tabs { 
   background: #F3F3F3;
@@ -461,15 +469,7 @@ a.btn-login{color:#666;margin-right :10px;}
 .academic-main .modules-list-section-help-doc li .fa {
     padding-right: 8px;
 }
-.academic-main .modules-list-section li a{
-  color: #6c6c6c;
-  font-weight: 500;
-  text-transform: uppercase;
-  font-size: 15px;
-  display: block;
-  padding: 20px 15px;
-}
-.academic-main .modules-list-section-help-doc li a{
+.academic-main .modules-list-section li a,.academic-main .modules-list-section-help-doc li a{
   color: #6c6c6c;
   font-weight: 500;
   text-transform: uppercase;
@@ -480,37 +480,34 @@ a.btn-login{color:#666;margin-right :10px;}
 .academic-main .modules-list-section-help-doc li:hover, .academic-main .modules-list-section-help-doc li.active{
   background: #f2f7fc;
 }
-.academic-main .modules-list-section .fa-calendar:before{
+.academic-main .modules-list-section .fa-calendar:before, .academic-main .modules-list-section-help-doc .fa-calendar:before{
   color: #fda03c;
 }
-.academic-main .modules-list-section .fa-envelope:before{
+.academic-main .modules-list-section .fa-envelope:before, .academic-main .modules-list-section-help-doc .fa-envelope:before{
   color: #6ab123;
 }
-.academic-main .modules-list-section .fa-edit:before{
+.academic-main .modules-list-section .fa-edit:before, .academic-main .modules-list-section-help-doc .fa-edit:before{
   color: #ff3e4b;
 }
-.academic-main .modules-list-section .fa-credit-card:before{
+.academic-main .modules-list-section .fa-credit-card:before, .academic-main .modules-list-section-help-doc .fa-credit-card:before{
   color: #0a6bce;
 }
-.academic-main .modules-list-section .fa-twitch:before{
+.academic-main .modules-list-section .fa-twitch:before, .academic-main .modules-list-section-help-doc .fa-twitch:before{
   color: #c75f43;
 }
-.academic-main .modules-list-section .fa-users:before{
+.academic-main .modules-list-section .fa-users:before, .academic-main .modules-list-section-help-doc .fa-users:before{
   color: #9842fd;
 }
-.academic-main .modules-list-section .fa-newspaper-o:before{
+.academic-main .modules-list-section .fa-newspaper-o:before, .academic-main .modules-list-section-help-doc .fa-newspaper-o:before{
   color: #00a885;
 }
-.academic-main .modules-list-section .fa-cogs:before{
+.academic-main .modules-list-section .fa-cogs:before, .academic-main .modules-list-section-help-doc .fa-cogs:before{
   color: #d8bf00;
 }
-.academic-main .modules-list-section-help-doc .fa-cogs:before {
-    color: #d8bf00;
-}
-.academic-main .modules-list-section .fa-flask:before{
+.academic-main .modules-list-section .fa-flask:before, .academic-main .modules-list-section-help-doc .fa-flask:before{
   color: #bd1769;
 }
-.academic-main .modules-list-section .fa-video-camera:before{
+.academic-main .modules-list-section .fa-video-camera:before, .academic-main .modules-list-section-help-doc .fa-video-camera:before{
   color: #43c7a8;
 }
 .academic-main .content-section{
@@ -532,12 +529,16 @@ a.btn-login{color:#666;margin-right :10px;}
   font-size: 14px;
   text-align: center;
 }
+.academic-main .content-section a{
+  color: #626262;
+  display: block;
+}
 .academic-main .documents div{ 
-    padding: 0 15px;
-    line-height: 45px;
-    height: 45px;
-    border: 1px solid #f0f0f0;    
-    margin-bottom: 10px;
+  padding: 0 15px;
+  line-height: 45px;
+  height: 45px;
+  border: 1px solid #f0f0f0;    
+  margin-bottom: 10px;
   -webkit-transition: all 0.4s;
   -moz-transition: all 0.4s;
   transition: all 0.4s;
@@ -549,8 +550,8 @@ a.btn-login{color:#666;margin-right :10px;}
   color: #626262;
 }
 .academic-main .documents div .fa {
-    float: right;
-    line-height: 45px;
+  float: right;
+  line-height: 45px;
 }
 .academic-main .more-btn{
   padding: 0 15px;
@@ -567,14 +568,21 @@ a.btn-login{color:#666;margin-right :10px;}
   background: #f3f7fd;
   border-bottom: none !important;  
 }
+.academic-main .documents,
+.academic-main .faq, 
+.academic-main .videos, 
+.academic-main .courses{
+  min-height: 210px;
+  
+}
 .academic-main .video-tutorials, .academic-main .detailed-courses{
   width: 100%;   
   margin-bottom: 20px;
   display: inline-block;
 }
-.academic-main .video-tutorials a, .academic-main .detailed-courses a, .academic-main .faq a{
+/*.academic-main .video-tutorials a, .academic-main .detailed-courses a, .academic-main .faq a{
   color: #626262;
-}
+}*/
 .academic-main .video-tutorials .video-image, .academic-main .detailed-courses .video-image{
   float: left;
   margin-right: 10px;
@@ -595,8 +603,12 @@ a.btn-login{color:#666;margin-right :10px;}
 .academic-main .video-tutorials .video-content h4 a:hover, .academic-main .detailed-courses .courses-content h4 a:hover, .academic-main .video-tutorials .video-content p a:hover, .academic-main .detailed-courses .courses-content p a:hover{
   color:#949494;
 }
-.academic-main .faq ul.list-items {
+/*.academic-main .faq ul.list-items {
   min-height: 217px;
+}*/
+.academic-main .faq ul.list-items li {
+  display: flex;
+  margin-bottom: 10px;
 }
 .academic-main .faq ul.list-items li a{
   padding-bottom: 17px;
@@ -922,8 +934,12 @@ dd span, .selectedValue span {
 .academic-main .inner-detail .reporting h3{  
   color: #ff3e4b;
 }
-.academic-main .inner-detail .reporting .fa{  
+.academic-main .inner-detail .reporting .line .fa{  
   background: #ff3e4b;
+}
+.academic-main .inner-detail .panel-title .fa{
+  background: none !important;
+  float: right !important;
 }
 .academic-main .inner-detail .billing h3{  
   color: #0a6bce;
@@ -970,9 +986,13 @@ dd span, .selectedValue span {
 .academic-main .inner-detail .panel-heading {
   background: #fff;
 }
-.academic-main .inner-detail .panel-heading a{
-  display: block;
-  padding: 10px 0;
+.academic-main .inner-detail .panel-heading a {
+    display: block;
+    padding: 10px 0;
+    color: #536071;
+    font-size: 14px;
+    letter-spacing: -.2px;
+    font-weight: 400;
 }
 .academic-main .inner-detail .panel-heading:hover, .academic-main .inner-detail .panel-heading.active {
   background: #f9f9f9;
@@ -992,6 +1012,22 @@ dd span, .selectedValue span {
 .academic-main .panel-default > .panel-heading + .panel-collapse > .panel-body p {
   color: #6c6c6c;
   font-size: 13px;
+}
+.academic-main .panel-default > .panel-heading + .panel-collapse > .panel-body ol {
+  margin-left: 15px;
+  color: #6c6c6c;
+  font-size: 13px;
+}
+.academic-main .panel-default > .panel-heading + .panel-collapse > .panel-body ol li{
+  padding-bottom: 10px;
+}
+.academic-main .panel-default > .panel-heading + .panel-collapse > .panel-body ol li ul{
+  padding: 15px 0 0 5px;
+}
+.academic-main .panel-default > .panel-heading + .panel-collapse > .panel-body ol li ul li:before{
+  content:"\f0da";
+  font-family: FontAwesome;
+  padding-right: 5px;
 }
 .academic-main .panel-default > .panel-heading + .panel-collapse > .panel-body h1 {
   font-size: 14px;
@@ -1065,24 +1101,28 @@ dd span, .selectedValue span {
   border-right: 1px solid #ccc;
   padding-left: 10px;
 }
-.academic-main .right-section{
+/*.academic-main .right-section{
   margin-top: 30px;
-}
-
-.academic-main .right-section .right-content-section{
+}*/
+/*.academic-main .right-section .right-content-section{
     padding: 20px 0 0;
-}
+}*/
 .academic-main .right-section .right-content-section h2{
-  color: #6c6c6c;
+  color: #636363;
   font-size: 20px;
   padding-bottom: 10px;
+  font-weight: 400;
 }
 .academic-main .right-section .right-content-section .content{
   margin-bottom: 20px;
 }
+.academic-main .right-section .right-content-section .content h3{
+  line-height: 16px !important;
+  margin-bottom: 12px;
+}
 .academic-main .right-section .right-content-section .content h3 a{
   color: #6c6c6c;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: normal;
   padding-bottom: 0;  
   margin-bottom: 15px;
@@ -1090,11 +1130,11 @@ dd span, .selectedValue span {
 .academic-main .right-section .right-content-section .content h3 .fa{
   color: #06cb57;
   font-size: 18px;
-  padding-right: 5px;
+  padding-right: 0px;
   text-align: center;
 }
 .academic-main .right-section .right-content-section .content p a{
-  font-size: 14px;
+  font-size: 13px;
   color: #6c6c6c;
 }
 .academic-main .right-section .right-content-section .content h3 a:hover, .academic-main .right-section .right-content-section .content p a:hover{
@@ -1108,7 +1148,7 @@ dd span, .selectedValue span {
 }
 .academic-main .right-content-section h2.line {
   text-align: left;
-  margin-top: 30px;
+  margin-top: 25px;
   position: relative;
   margin-bottom: 10px;
 }
@@ -1124,7 +1164,7 @@ dd span, .selectedValue span {
 }
 .academic-main .right-content-section h2.line span {
     background: #fff;
-    padding: 0 5px;
+    padding: 0 5px 0 0;
     position: relative;
     z-index: 5;
 }
@@ -1138,11 +1178,29 @@ dd span, .selectedValue span {
   height: 100%;
   min-height: 159px;
   margin-bottom: 15px;
+  position: relative;
 }
+
+.academic-main .inner-detail .video-sm .after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    color: #FFF;
+}
+.academic-main .inner-detail .video-sm:hover .after {
+    display: block;
+    background: rgba(0, 0, 0, .6);
+}
+
 .academic-main .inner-detail .video-sm h3 a{
-  font-size: 16px; 
+  font-size: 15px;
+  line-height: 22px;
   color: #484848;
   text-transform: none;
+  font-weight: 600;
 }
 .academic-main .inner-detail .video-sm p{
   font-size: 14px;
@@ -1154,8 +1212,9 @@ dd span, .selectedValue span {
   background-color: #f9f9f9;
   color: #6c6c6c;
   border: 1px solid #ebebeb;
-  padding:5px 12px;
+  padding:8px 12px;
   font-size: 14px;
+  text-align: center;
 }
 .academic-main .inner-detail .video-sm a.view-btn:hover{
   background: #f2f7fc;
@@ -1166,7 +1225,7 @@ dd span, .selectedValue span {
 }
 
 .academic-main .inner-detail .content-section h4{
-  font-size: 20px;
+  font-size: 15px;
   color: #6c6c6c;
 }
 .academic-main .inner-detail .content-section h4.line {
@@ -1223,7 +1282,7 @@ dd span, .selectedValue span {
     text-align: center;
   }
    .academic-main .banner{
-    margin-top:170px;
+    margin-top:120px;
    }
   .academic-footer, .academic-footer .social-media, .academic-footer p { 
     text-align: center;
@@ -1249,9 +1308,6 @@ dd span, .selectedValue span {
   /*.academic-main .inner-detail .video-sm{
     min-height: 520px;
   }*/
-  .academic-main .inner-detail .video-sm p{
-    min-height: 70px;
-  }
 }
 
 @media screen and (max-width:830px) {
@@ -1275,6 +1331,7 @@ dd span, .selectedValue span {
     line-height: 30px;
   }
   .logo-section {
+    margin-top: 0px;
     text-align: center;
   }
   .academic-main .readmore h4 {
@@ -1283,11 +1340,21 @@ dd span, .selectedValue span {
   .navbar-header{
     display: block;
     background: #f2f7fc;
+    margin-top: 20px;
   }
   .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus{
     background: #f8f8f8;
+  }  
+   .zh-home-navigation nav {
+    float: none !important;
   }
-
+   nav ul li { 
+    display: block; 
+    border-bottom: 1px solid #F7F7F7;
+  }
+   .academic-main .banner { 
+    margin-top: 110px;
+  }
 }
 @media screen and (max-width:784px) {
    .academic-main .banner{
@@ -1308,13 +1375,6 @@ dd span, .selectedValue span {
    .zh-home-navigation{
     display: block;
   }
-   .zh-home-navigation nav {
-    float: none !important;
-  }
-   nav ul li { 
-    display: block; 
-    border-bottom: 1px solid #F7F7F7;
-  }
    .academic-main .banner { 
     margin-top: 200px;
   }
@@ -1322,7 +1382,6 @@ dd span, .selectedValue span {
     position: absolute;
   }
 }
-
 
 
 /*.academy .academy-top{ margin-top: 150px;}
@@ -1489,14 +1548,46 @@ dd span, .selectedValue span {
 .academy .academy-top p { font-size: 12px;}
 }
 */
-/*aswin added , anupama style issue fix*/
+/*aswin added , /*/
+.share-this {
+    padding: 5px;
+    background: #01B4F5;
+    max-width: 100px;
+    text-align: center;
+    color: #ffffff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.share-this:hover {
+    background: rgb(0, 157, 209);
+}
 
+div#copy-clipboard input {
+    position: relative;
+    border: solid 1px#c7c7c7;
+    border-radius: 4px;
+    width: 100%;
+    color: rgba(85, 85, 85, 0.86);
+}
+div#copy-clipboard button {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    height: 100%;
+}
+div#copy-clipboard .input-group {
+    width: 100%;
+}
+div#copy-clipboard  .btn:hover, .btn:focus, .btn.focus {
+    color: #337AB7;
+    text-decoration: none;
+}
 .video-tutorials .video-image {
     max-width: 118px;
 }
 .detailed-courses .video-image {
     max-width: 118px;
-    height: 100%;
+    /*height: 100%;*/
     min-height: 90px;
 }
 .no-post {

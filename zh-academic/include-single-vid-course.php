@@ -24,10 +24,10 @@
         <?php }  ?>                                                                                                                                                                                                                                                           
             <h4 class="line"> 
                 <span class="padding-r10"><?php the_title();?></span>
-                <span class="padding-l10 pull-right">
+<!--                <span class="padding-l10 pull-right">
                     <a href="#" data-toggle="tooltip" title="" data-placement="top" data-original-title="Previous"><i class="fa fa-angle-left"></i></a>
                     <a href="#" data-toggle="tooltip" title="" data-placement="top" data-original-title="Next"><i class="fa fa-angle-right"></i></a>
-                </span>
+                </span>-->
             </h4>
             <p><?php  the_content();?> </p>
         </div>
@@ -65,7 +65,7 @@
 <div class="row">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">                 
         <h4 class="line"> 
-            <span class="padding-r10">Related <?php echo $term_slug;?>'s</span>
+            <span class="padding-r10">Related <?php echo $term_slug;?>s</span>
         </h4>
     </div>
 </div>
@@ -113,7 +113,7 @@
                     </a>
                     <h3> <a href="<?php the_permalink();?>"><?php the_title();?></a></h3>
                     <p><?php echo substr(get_the_excerpt(), 0,130); ?></p>
-                    <a href="<?php the_permalink();?>" class="view-btn">View <?php echo $term_slug;?></a>
+                    <a href="<?php the_permalink();?>" class="view-btn">View <?php $term_slug_upper = ucfirst($term_slug);  echo $term_slug_upper;?></a>
                 </div>
             </div>
           <?php                                                                             

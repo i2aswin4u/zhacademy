@@ -31,7 +31,7 @@ foreach ($tax_terms as $tax_term) {
 }
 $current_post_id = $post->ID;
 ?>
-
+<!-- File : single.php-->
                 <!--start of new design-->
 <div class="academic-main">
 
@@ -41,7 +41,7 @@ $current_post_id = $post->ID;
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12 text-center">
                     <h1><?php $name = ot_get_option('search_banner_title');
-                              if ($name) {    echo $name;} else {    echo "Get Learning , Get Certified";} ?></h1><h4> single.php </h4>
+                              if ($name) {    echo $name;} else {    echo "Get Learning , Get Certified";} ?></h1>
                     <p class="bold"> 
                         <?php $name = ot_get_option('search_banner_sub_titile');
                               if ($name) {    echo $name;} else {    echo "Learn the simplicity & flexibility of the Blue EHS . Understand how it adapts to the way you practice your way.";} ?></p>
@@ -70,17 +70,18 @@ $current_post_id = $post->ID;
                     </div>
 
                     <div class="row">
-                        <div class="col-lg-3 col-md-2 colo-sm-12 col-xs-12">
+                        <div class="col-lg-3 col-md-3 colo-sm-12 col-xs-12">
                            <?php include("sidebar-tax-groups.php"); ?> 
                         </div>
-                        <div class="col-lg-9 col-md-10 col-sm-12 col-xs-12">
+                        <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
                             <!-- Tab panes -->
                             <div class="margin-tb30">
                                 <div class="inner-detail">
                                     <div class="row">
-                                        <div class="col-lg-9 col-md-6 col-sm-12 col-xs-12 reporting">
+                                        <div class="col-lg-9 col-md-8 col-sm-12 col-xs-12 reporting">
                                             <?php 
-                                                    $term_list = wp_get_post_terms($post->ID, 'academy', array("fields" => "all"));
+                                                    $term_list = wp_get_post_terms($post->ID, 'academy', array("fields" => "all"));    
+//                                                    var_dump($term_list);
                                                     foreach ($term_list as $term_li){
                                                         $term_slug = $term_li->slug;    
                                                     }   
@@ -93,7 +94,7 @@ $current_post_id = $post->ID;
                                             ?>
                                         </div>
                                         
-                                        <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
+                                        <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
                                             <?php include("leftsidebar.php"); ?>
                                         </div>
                                     </div>
@@ -107,7 +108,7 @@ $current_post_id = $post->ID;
         <div class="readmore padding-tb20">
             <div class="container" <div="">
                     <div class="col-md-12 col-sm-12 col-xs-12">
-                        <h4>You may also call <b>1-866-263-6512</b> to speak to a support representative <br>or email <b>support@zhservices.com</b></h4>
+                         <h4><?php echo ot_get_option('footer_banner_text');?></h4>
                     </div>
                 </div>
             </div>

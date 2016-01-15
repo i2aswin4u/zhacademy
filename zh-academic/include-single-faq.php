@@ -6,7 +6,12 @@
             $term = get_term( $id_term, 'modules' );
             $term_meta = get_option("taxonomy_$id_term");
          ?>
-         <h3 class="line"><span><i class="<?php if ($term_meta[img]) {  echo $term_meta[img]; } else {  echo 'fa fa-cogs'; } ?>"></i> <?php echo $term->name; ?></span></h3>                                                                                                                                
+         <h3 class="line">
+             <span>
+                 <!--<i class="<?php// if ($term_meta[img]) {  echo $term_meta[img]; } else {  echo 'fa fa-cogs'; } ?>"></i>--> 
+                 <?php echo $term->name; ?>
+             </span>
+         </h3>                                                                                                                                
         <!--<h3 class="line"><span><i class="fa fa-edit"></i> Reporting</span></h3>-->
             <div class="panel-group" id="accordion">
             <?php
@@ -40,9 +45,11 @@
                             $i++;
                             ?>                                                                                    
                         <div class="panel panel-default">
-                            <div class="panel-heading" id="<?php echo get_the_ID() ?>" <?php //if($current_post_id ==  get_the_ID()){ echo 'active'; } ?>>
+                            <div class="panel-heading" id="<?php echo get_the_ID(); ?>">
                                 <h4 class="panel-title">
-                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse<?php echo $i;?>" class="collapsed" aria-expanded="false"><?php the_title();?></a>
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse<?php echo $i;?>" class="collapsed" aria-expanded="false"><?php the_title();?>
+                                      <i class="fa fa-angle-down"></i>
+                                    </a>
                                 </h4>
                             </div>
                             <div id="collapse<?php echo $i;?>" class="panel-collapse collapse" aria-expanded="false">
