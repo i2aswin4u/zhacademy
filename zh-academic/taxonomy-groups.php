@@ -95,7 +95,7 @@ foreach ($tax_terms as $tax_term) {
                                                         echo $term_meta[img];
                                                     } else {
                                                         echo 'fa fa-cogs';
-                                                    } ?>"></i> <?php echo $term->name; ?></span></h3>
+                                                    } ?>"></i> <?php  echo 'Help Documents &Rightarrow; '; echo $term->name; ?></span></h3>
                                                 <div class="panel-group" id="accordion">
                                                     <?php
                                                     $term = get_term($id, $taxonomy);
@@ -129,16 +129,21 @@ foreach ($tax_terms as $tax_term) {
                                                                     <div id="collapse<?php echo $k; ?>" class="panel-collapse collapse" aria-expanded="false">
                                                                         <div class="panel-body">
                                                                             <p><?php the_content(); ?></p>
-                                                                             <div id="copy-clipboard" class="example">
-                                                                                <div class="input-group">
-                                                                                    <input id="ash_<?php echo get_the_id();?>" type="text" readonly value="<?php the_permalink();?>">
-                                                                                    <span class="input-group-button">
-                                                                                        <button class="btn-clipboard btn" type="button"  data-toggle="tooltip" data-placement="left" title="Copy To Clipboard"  data-clipboard-demo="" data-clipboard-target="#ash_<?php echo get_the_id();?>">
-                                                                                            <i class="fa fa-clipboard"width="13" alt="Copy to clipboard"></i>
-                                                                                        </button>
-                                                                                    </span>
+                                                                               <div id="copy-clipboard" class="example">
+                                                                                    <div class="input-group">
+                                                                                        <div class="col-md-1 col-sm-2 col-xs-2 nopadding">
+                                                                                            <div class="sharebtn">Share</div>
+                                                                                        </div>
+                                                                                        <div class="col-md-11 col-sm-10 col-xs-10 nopadding">
+                                                                                            <input id="ash_<?php echo get_the_id();?>" type="text" readonly value="<?php the_permalink();?>">
+                                                                                            <span class="input-group-button">
+                                                                                                <button class="btn-clipboard btn" type="button"  data-toggle="tooltip" data-placement="left" title="Copy To Clipboard"  data-clipboard-demo="" data-clipboard-target="#ash_<?php echo get_the_id();?>">
+                                                                                                    <i class="fa fa-clipboard"width="13" alt="Copy to clipboard"></i>
+                                                                                                </button>
+                                                                                            </span>
+                                                                                        </div>                                                                            
+                                                                                    </div>
                                                                                 </div>
-                                                                            </div>
                                                                         </div>
                                                                     </div>
                                                                 </div>                                                                
@@ -180,4 +185,11 @@ foreach ($tax_terms as $tax_term) {
     <!--end of new design-->
 
 </div>
+<script type="text/javascript">
+    $(document).ready(function(){        
+        $('#accordion .panel-heading a:first').click(); 
+        $('.panel-heading:first a i').removeClass( "fa fa-angle-down" ).addClass("fa fa-angle-up");
+        $('.panel-heading:first').addClass( "active" );
+    });
+</script>
 <?php get_footer('home'); ?>

@@ -44,16 +44,25 @@
                  }
                  else{
                       $postTypeArray = array('post');
-                 }
+                 }                                  
                     $args = array(
                         'post_type' => $postTypeArray,
                         's' => $s,
                         'offset' => $offset,                                                               
                         'orderby' => 'date',
-                        'posts_per_page' => -1,
                         'tax_query' => array(),
+                        'post_status' => 'publish',
+                        'posts_per_page' => -1
                     );
-                    $new_query = new WP_Query($args); 
+                     $args['tax_query']['relation'] = 'OR';
+                    foreach ($post_types_is as $post_types) {              
+                        $args['tax_query'][] = array (  
+                            'taxonomy' => 'academy',  
+                            'field' => 'slug',
+                            'terms' => $post_types,
+                        );
+                    }                     
+                    $new_query = new WP_Query($args);
                     $post_count =  $new_query->post_count;
                     $post_count = sprintf("%02d", $post_count);
                     ?>

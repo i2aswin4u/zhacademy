@@ -9,11 +9,11 @@
          <h3 class="line">
              <span>
                  <!--<i class="<?php// if ($term_meta[img]) {  echo $term_meta[img]; } else {  echo 'fa fa-cogs'; } ?>"></i>--> 
-                 <?php echo $term->name; ?>
+                 <?php echo $term_slug.' &Rightarrow; '; echo $term->name;  ?>
              </span>
          </h3>                                                                                                                                
         <!--<h3 class="line"><span><i class="fa fa-edit"></i> Reporting</span></h3>-->
-            <div class="panel-group" id="accordion">
+         <div class="panel-group" id="accordion">
             <?php
             $args = array(
                     'post_type' => 'post',
@@ -55,6 +55,21 @@
                             <div id="collapse<?php echo $i;?>" class="panel-collapse collapse" aria-expanded="false">
                                 <div class="panel-body">
                                     <p><?php the_content();?></p>
+                                     <div id="copy-clipboard" class="example">
+                                        <div class="input-group">
+                                            <div class="col-md-1 col-sm-2 col-xs-2 nopadding">
+                                                <div class="sharebtn">Share</div>
+                                            </div>
+                                            <div class="col-md-11 col-sm-10 col-xs-10 nopadding">
+                                                <input id="ash_<?php echo get_the_id();?>" type="text" readonly value="<?php the_permalink();?>">
+                                                <span class="input-group-button">
+                                                    <button class="btn-clipboard btn" type="button"  data-toggle="tooltip" data-placement="left" title="Copy To Clipboard"  data-clipboard-demo="" data-clipboard-target="#ash_<?php echo get_the_id();?>">
+                                                        <i class="fa fa-clipboard"width="13" alt="Copy to clipboard"></i>
+                                                    </button>
+                                                </span>
+                                            </div>                                                                            
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                     </div>

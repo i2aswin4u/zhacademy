@@ -225,7 +225,7 @@ $( document ).ready(function() {
       // Set active class for modules Help Documents 
     $( ".modules-list-section-help-doc li" ).each(function() {
       if($(this).attr("id") == '<?php echo $_SESSION['modules'];?>'){
-          $( this ).addClass( "active" );debugger
+          $( this ).addClass( "active" );
       }else{
           $( this ).removeClass( "active" );
       }

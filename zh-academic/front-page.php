@@ -30,7 +30,7 @@
                      $t_id = $tax_term->term_id;
                      $term_meta = get_option( "taxonomy_$t_id" );
             ?>
-            <div class="col-md-3 col-sm-4 col-xs-6">
+            <div class="col-md-2 col-sm-4 col-xs-6">
                 <div class="modules" id="<?php echo $tax_term->slug; ?>">
                     <a href="<?php echo  esc_attr(get_term_link($tax_term, $taxonomy));?>">
                         <i class="fa <?php if($term_meta[img]) {echo $term_meta[img];} else {echo 'fa-cogs';}?>"></i> 
@@ -72,7 +72,7 @@
                     </div>
                     <h4><?php echo get_field('tab_1_title');?></h4>
                     <p class="margin-b40"><?php echo get_field('tab_1_text');?></p>
-                    <a href="<?php echo get_field('tab_1_link');?>"><div class="readmore call-us"> Toll Free : <b>1-866-263-6512</b> </div></a>
+                    <a href="tel:+<?php echo get_field('tab_1_link');?>"><div class="readmore call-us"> Toll Free : <b>1-866-263-6512</b> </div></a>
                 </div>
             </div>
             <div class="col-md-4 col-sm-12 col-xs-12">

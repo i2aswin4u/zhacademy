@@ -122,12 +122,22 @@ function prefix_ajax_add_foobar() {
     $offset = $_POST['data-offset'];
     $post_per_pg = $_POST['data-post_per_pg'];
     $post_types_is = $_POST['data-post_types_is'];   
-    $s = $_POST['search_key'];   
+    $s = $_POST['search_key'];      
+                 if (in_array("texthelpdoc", $post_types_is)){
+                        if(count($post_types_is)== 1)
+                        $postTypeArray = array('texthelpdoc');
+                        else
+                        $postTypeArray = array('texthelpdoc','post');
+                 }
+                 else{
+                      $postTypeArray = array('post');
+                 }
                     $args = array(
+                        'post_type' => $postTypeArray,                                                                       
                         's' => $s,
                         'offset' => $offset,
-                        'post_type' => 'post',
                         'orderby' => 'date',
+                        'post_status' => 'publish',
                         'posts_per_page' => $post_per_pg,
                         'tax_query' => array(),
                     );

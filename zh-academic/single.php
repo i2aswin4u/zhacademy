@@ -92,10 +92,8 @@ $current_post_id = $post->ID;
                                                          include("include-single-vid-course.php");
                                                          } 
                                             ?>
-                                        </div>
-                                        
-                                        <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12">
-                                            <?php include("leftsidebar.php"); ?>
+                                        </div>                                        
+                                        <div class="col-lg-3 col-md-4 col-sm-12 col-xs-12"> 
                                         </div>
                                     </div>
                                 </div>
@@ -106,7 +104,7 @@ $current_post_id = $post->ID;
             </div>
         </div>
         <div class="readmore padding-tb20">
-            <div class="container" <div="">
+            <div class="container">
                     <div class="col-md-12 col-sm-12 col-xs-12">
                          <h4><?php echo ot_get_option('footer_banner_text');?></h4>
                     </div>

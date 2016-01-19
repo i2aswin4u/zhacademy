@@ -121,12 +121,17 @@ foreach ($tax_terms as $tax_term) {
                                                                 <p><?php the_content();?></p>
                                                                 <div id="copy-clipboard" class="example">
                                                                     <div class="input-group">
-                                                                        <input id="ash_<?php echo get_the_id();?>" type="text" readonly value="<?php the_permalink();?>">
-                                                                        <span class="input-group-button">
-                                                                            <button class="btn-clipboard btn" type="button"  data-toggle="tooltip" data-placement="left" title="Copy To Clipboard"  data-clipboard-demo="" data-clipboard-target="#ash_<?php echo get_the_id();?>">
-                                                                                <i class="fa fa-clipboard"width="13" alt="Copy to clipboard"></i>
-                                                                            </button>
-                                                                        </span>
+                                                                        <div class="col-md-1 col-sm-2 col-xs-2 nopadding">
+                                                                            <div class="sharebtn">Share</div>
+                                                                        </div>
+                                                                        <div class="col-md-11 col-sm-10 col-xs-10 nopadding">
+                                                                            <input id="ash_<?php echo get_the_id();?>" type="text" readonly value="<?php the_permalink();?>">
+                                                                            <span class="input-group-button">
+                                                                                <button class="btn-clipboard btn" type="button"  data-toggle="tooltip" data-placement="left" title="Copy To Clipboard"  data-clipboard-demo="" data-clipboard-target="#ash_<?php echo get_the_id();?>">
+                                                                                    <i class="fa fa-clipboard"width="13" alt="Copy to clipboard"></i>
+                                                                                </button>
+                                                                            </span>
+                                                                        </div>                                                                            
                                                                     </div>
                                                                 </div>
                                                             </div>
